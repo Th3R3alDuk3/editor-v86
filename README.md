@@ -1,40 +1,41 @@
+# editor-v86-tcc
+
 https://github.com/copy/v86/wiki/How-to-Compile-v86-(Both-for-embedded-use-and-with-the-GUI)
+  
+Some images for vor v86 emulation:  
 https://github.com/copy/images
-https://git.fslab.de/lschau2s/lunix.io/-/blob/master/v86/docs/archlinux.md
 
-sudo apt install packer --fix-missing
+## Installation
 
-## 1. Option
-### Qemu & ArchLinux
+### using Qemu & ArchLinux32
 
 https://github.com/copy/v86/blob/master/docs/archlinux.md
-https://www.youtube.com/watch?v=iENmRwVhsTQ&t=137s
 
-```
+```bash
 wget https://mirror.archlinux32.org/archisos/archlinux32-2021.04.06-i686.iso
 
-qemu-img create archlinux32.img 2G
-qemu-system-i386 -hda archlinux32.img -cdrom archlinux32-2021.05.06-i686.iso -boot d -m 512
+# create a 2G disk image
+qemu-img create archlinux32-2021.04.06-i686.img 2G
+# follow installation process
+qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.05.06-i686.iso -boot d -m 512
 ```
 
-```
+```bash
 # load custom keyboard
 loadkeys de-latin1
 
 fdisk -l
-
 # bootable partition
 cfdisk /dev/sda
-
 # format partition
 mkfs.ext4 /dev/sda1
-
 # mount partition
 mount /dev/sda1 /mnt
 
 # install base linux
 pacstrap /mnt base linux linux-firmware
 
+# automate mounting of partitions
 genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
@@ -60,33 +61,30 @@ mkinicpio -P
 
 # install bootloader
 pacman -S grub os-prober
-
 # set bootloader
 grub-install /dev/sda
-
 # TODO: hidden menu
 # https://wiki.archlinux.org/title/GRUB/Tips_and_tricks
-
 grub-mkconfig -o /boot/grub/grub.cfg
 
 exit
 
 umount /mnt
 
+# systemctl poweroff or ...
 reboot
 ```
 
-start simple http server 
+Start a simple http server. 
 
 ```
 npm install -g http-server
 http-server -p 8000
 ```
 
-## 2. Option
-### Qemu & BuildRoot
+### using Qemu & BuildRoot
 
-```
+```bash
 sudo apt install qemu-system
 
 wget https://buildroot.uclibc.org/downloads/buildroot-2021.02.1.tar.gz
@@ -106,5 +104,7 @@ make
 
 wget -P images/ https://copy.sh/v86/images/{linux.iso,linux3.iso,kolibri.img,windows101.img,os8.dsk,freedos722.img,openbsd.img}
 ```
+
+### Examples
 
 https://copy.sh/v86/
