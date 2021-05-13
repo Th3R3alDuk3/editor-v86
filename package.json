@@ -1,0 +1,28 @@
+{
+  "name": "editor-v86-tcc",
+  "version": "1.0.0",
+  "description": "online C-editor that uses an x86-emulator",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Th3R3alDuk3/editor-v86-tcc.git"
+  },
+  "keywords": [
+    "v86",
+    "tcc",
+    "monaco-editor"
+  ],
+  "author": "Paul Graff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Th3R3alDuk3/editor-v86-tcc/issues"
+  },
+  "homepage": "https://github.com/Th3R3alDuk3/editor-v86-tcc#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "monaco-editor": "^0.23.0"
+  }
+}

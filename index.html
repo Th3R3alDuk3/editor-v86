@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>x86 Emulator</title>
+
+    </head>
+    <body>
+
+        <script type="text/javascript" src="build/libv86.js"></script>
+        <script type="text/javascript">
+
+            "use strict";
+            
+            window.onload = function()
+            {
+                var emulator = window.emulator = new V86Starter({
+                    wasm_path: "../build/v86.wasm",
+                    memory_size: 512 * 1024 * 1024,
+                    vga_memory_size: 2 * 1024 * 1024,
+                    screen_container: document.getElementById("screen_container"),
+                    bios: {
+                        url: "bios/seabios.bin",
+                    },
+                    vga_bios: {
+                        url: "bios/vgabios.bin",
+                    },
+                    hda: {
+                        url: "images/archlinux32.img",
+                        async: true
+                    },
+                    autostart: true,
+                });
+            }
+
+        </script>
+        
+        <div id="screen_container">
+            <div style="white-space: pre; font: 14px monospace; line-height: 14px"></div>
+            <canvas style="display: none"></canvas>
+        </div>
+        
+    </body>
+</html>
+
