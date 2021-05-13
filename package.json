@@ -1,7 +1,7 @@
 {
   "name": "editor-v86-tcc",
   "version": "1.0.0",
-  "description": "online C-editor that uses an x86-emulator",
+  "description": "online C-editor that uses an client-side x86-emulator",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"

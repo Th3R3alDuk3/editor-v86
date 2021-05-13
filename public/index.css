@@ -1,0 +1,32 @@
+body {                
+    /* font */
+    font-family: Consolas, "Courier New", monospace;
+    /* color */
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.flex-container {          
+    /* flex */
+    display: flex;
+    flex-direction: column;   
+    /* size */
+    height: calc(100vh - 60px);
+    /* distance */
+    margin: 20px;  
+    padding: 10px;
+}
+
+.flex-item1 {
+    /* size */
+    height: 300px;
+    max-height: 300px;
+}
+
+#screen_container {
+    /* size */
+    height: 100%;
+    max-height: 100%;
+    /* border */
+    border: 1px solid #393939;
+}
