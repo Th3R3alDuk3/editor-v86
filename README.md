@@ -17,7 +17,7 @@ https://copy.sh/v86/
 
 https://github.com/copy/v86/blob/master/docs/archlinux.md  
 
-- execute script `/public/scripts/1.sh`  
+- execute script `/scripts/1.sh`  
 -- download archlinux32 image  
 -- create hda image file  
 -- boot iso file and mount hda image file  
@@ -52,7 +52,7 @@ curl -O 192.168.xxx.xxx:xxxx/3.sh
 curl -O 192.168.xxx.xxx:xxxx/4.sh
 ```
 
-- execute script `/public/scripts/2.sh`  
+- execute script `/scripts/2.sh`  
 -- create and mount filesystem `/dev/sda1`  
 -- setting up `linux`  
 -- setting up `bootloader`  
