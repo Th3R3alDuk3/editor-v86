@@ -50,8 +50,6 @@ qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.04
 
 ## download script
 curl -O 192.168.xxx.xxx:xxxx/2.sh
-curl -O 192.168.xxx.xxx:xxxx/3.sh
-curl -O 192.168.xxx.xxx:xxxx/4.sh
 
 chmod +x *.sh
 ```
@@ -154,11 +152,22 @@ umount /mnt
 
 ### 9p Support
 
-- `qemu gui`  
+- switch to `qemu gui`  
 -- execute `scripts/archlinux32/3.sh`  
 -- execute `scripts/archlinux32/4.sh`  
-- `local system`  
--- execute `scripts/archlinux32/3.sh`  
+
+```shell
+# loadkeys de-latin1
+
+## download script
+curl -O 192.168.xxx.xxx:xxxx/3.sh
+curl -O 192.168.xxx.xxx:xxxx/4.sh
+
+chmod +x *.sh
+```
+
+- switch to `local system`  
+-- execute `scripts/archlinux32/5.sh`  
 
 ---
 
