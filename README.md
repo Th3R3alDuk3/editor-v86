@@ -20,10 +20,15 @@ https://github.com/copy/v86/blob/master/docs/archlinux.md
 ## download archlinux32 image
 wget -nc https://mirror.archlinux32.org/archisos/archlinux32-2021.04.06-i686.iso
 
-## create 2G disk image
-qemu-img create archlinux32-2021.04.06-i686.img 2G
-## follow installation process
-qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.05.06-i686.iso -boot d -m 512
+###
+
+## create hda image file
+# qemu-img create archlinux32-2021.04.06-i686.img 2G
+qemu-img create archlinux32-2021.04.06-i686.img 5G
+
+## boot iso file and mount hda image file
+# qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.04.06-i686.iso -boot d -m 512
+qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.04.06-i686.iso -boot d -m 1024
 ```
 
 - switch to qemu console
@@ -42,6 +47,8 @@ curl -O 192.168.xxx.xxx:xxxx/2.sh
 ## load custon keymap
 loadkeys de-latin1
 
+###
+
 ## create partition
 # fdisk -l
 # cfdisk /dev/sda
@@ -51,16 +58,22 @@ mkfs.ext4 /dev/sda1
 ##  mount filesystem
 mount /dev/sda1 /mnt
 
+###
+
 ## install linux
 # TODO: build linux kernel with 9p support
 # https://wiki.archlinux.org/title/Kernel/Arch_Build_System
 # pacstrap /mnt base linux linux-firmware
-# pacstrap /mnt base linux-lts linux-firmware
+pacstrap /mnt base linux-lts linux-firmware
 # pacstrap /mnt base linux-zen linux-firmware
-pacstrap /mnt base linux-hardened linux-firmware
+# pacstrap /mnt base linux-hardened linux-firmware
+
+###
 
 ## automatic mount partition
 genfstab -U /mnt >> /mnt/etc/fstab
+
+###
 
 ## root autologin
 # https://wiki.archlinux.org/title/Getty#Automatic_login_to_virtual_console
@@ -69,6 +82,8 @@ cat << 'EOF' > /mnt/etc/systemd/system/getty@tty1.service.d/override.conf
 [Service]
 ExecStart=-/usr/bin/agetty --autologin root --noclear %I $TERM
 EOF
+
+###
 
 ## 9p support
 # https://github.com/copy/v86/blob/master/docs/linux-9p-image.md
@@ -96,6 +111,11 @@ build() {
 	add_runscript
 }
 EOF
+## initramfs modules support 9p
+sed -i 's/MODULES=(/MODULES=(virtio_pci 9p 9pnet 9pnet_virtio /g' /mnt/etc/mkinitcpio.conf
+sed -i 's/HOOKS=(/HOOKS=(9p_root /g' /mnt/etc/mkinitcpio.conf
+
+###
 
 ## write arch-chroot bootstrap  
 cat << 'EOF' > /mnt/bootstrap.sh
@@ -105,11 +125,15 @@ cat << 'EOF' > /mnt/bootstrap.sh
 # https://wiki.archlinux.de/title/Arch_Linux_auf_Deutsch_stellen#localectl
 
 ## root password
-echo 'qwepoi123098' | passwd root --stdin
+echo 'root:qwepoi123098' | chpasswd
+
+###
 
 ## packages
 pacman -S vim tcc sl --noconfirm
 pacman -S grub os-prober --noconfirm
+
+###
 
 ## grub
 grub-install /dev/sda
@@ -120,18 +144,20 @@ sed -i 's/GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/g' /etc/default/grub
 ## write grub config 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-## initramfs
-# support v86 keyboard
-sed -i 's/MODULES=(/MODULES=(atkbd i8042 /g' /etc/mkinitcpio.conf
-# support v86 9p 
-sed -i 's/MODULES=(/MODULES=(virtio_pci 9p 9pnet 9pnet_virtio /g' /etc/mkinitcpio.conf
-sed -i 's/HOOKS=(/HOOKS=(9p_root /g' /etc/mkinitcpio.conf
+###
 
-# write initramfs images
+## initramfs modules support v86 keyboard
+sed -i 's/MODULES=(/MODULES=(atkbd i8042 /g' /etc/mkinitcpio.conf
+
+###
+
+## write initramfs images
 mkinitcpio -P
 EOF
-
+## execute arch-chroot bootstrap
 arch-chroot /mnt bash bootstrap.sh
+
+###
 
 umount /mnt
 
