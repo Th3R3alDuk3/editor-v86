@@ -152,6 +152,16 @@ umount /mnt
 
 ---
 
+### 9p Support
+
+- `qemu gui`  
+-- execute `scripts/archlinux32/3.sh`  
+-- execute `scripts/archlinux32/4.sh`  
+- `local system`  
+-- execute `scripts/archlinux32/3.sh`  
+
+---
+
 Start a simple http server. 
 
 ```
