@@ -1,44 +1,3 @@
-# editor-v86-tcc
-
-https://github.com/copy/v86/wiki/How-to-Compile-v86-(Both-for-embedded-use-and-with-the-GUI)
-  
-Some images for vor v86 emulation:  
-https://github.com/copy/images
-
-## Installation
-
-### using Qemu & ArchLinux32
-
-https://github.com/copy/v86/blob/master/docs/archlinux.md
-
-- execute script `/public/scripts/1.sh`
--- download archlinux32 image 
--- create hda image file
--- boot iso file and mount hda image file
-
-```shell
-## download archlinux32 image
-wget -nc https://mirror.archlinux32.org/archisos/archlinux32-2021.04.06-i686.iso
-
-## create 2G disk image
-qemu-img create archlinux32-2021.04.06-i686.img 2G
-## follow installation process
-qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.05.06-i686.iso -boot d -m 512
-```
-
-- switch to qemu console
-
-```shell
-## download script
-curl -O 192.168.xxx.xxx:xxxx/2.sh
-```
-
-- execute script `/public/scripts/2.sh`
--- create and mount filesystem `/dev/sda1`
--- setting up `linux`
--- setting up `bootloader`
-
-```shell
 ## load custon keymap
 loadkeys de-latin1
 
@@ -56,8 +15,8 @@ mount /dev/sda1 /mnt
 # https://wiki.archlinux.org/title/Kernel/Arch_Build_System
 # pacstrap /mnt base linux linux-firmware
 # pacstrap /mnt base linux-lts linux-firmware
-# pacstrap /mnt base linux-zen linux-firmware
-pacstrap /mnt base linux-hardened linux-firmware
+pacstrap /mnt base linux-zen linux-firmware
+# pacstrap /mnt base linux-hardened linux-firmware
 
 ## automatic mount partition
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -137,72 +96,3 @@ umount /mnt
 
 # systemctl poweroff or ...
 # reboot
-```
-
----
-
-Start a simple http server. 
-
-```
-npm install -g http-server
-http-server -p 8000
-```
-
-### 9p filesystem
-
-```shell
-mkdir mnt
-
-sudo losetup -f
-sudo losetup /dev/loop12 /archlinux32-2021.04.06-i686.img
-sudo kpartx -a /dev/loop12vim
-
-sudo mount /dev/mapper/loop12p1 mnt
-
-# make dirs
-mkdir -p out/arch32
-mkdir -p out/images
-
-wget https://github.com/copy/v86/blob/3791d63ffd09881782690902c6ee57f0edbd56a3/tools/fs2json.py
-# filesystem to json
-sudo python fs2json.py --exclude /boot/ --out out/images/fs.json mnt
-
-# copy filesystem
-sudo rsync -q -av mnt/ out/arch32
-# chown to nonroot user
-sudo chown -R $(whoami):$(whoami) out/arch32
-
-# clean up mounts
-sudo umount diskmount -f
-sudo kpartx  -d /dev/loop0
-sudo losetup -d /dev/loop0
-
-# TODO: copy image to out/images
-```
-
-### using Qemu & BuildRoot
-
-```shell
-sudo apt install qemu-system
-
-wget https://buildroot.uclibc.org/downloads/buildroot-2021.02.1.tar.gz
-tar -xvzf buildroot-2021.02.1.tar.gz
-
-cd buildroot-2021.02.1
-
-make menuconfig
-make nconfig
-make xconfig
-make qconfig
-
-make list-defconfigs
-
-make qemu_x86_defconfig
-make
-
-wget -P images/ https://copy.sh/v86/images/{linux.iso,linux3.iso,kolibri.img,windows101.img,os8.dsk,freedos722.img,openbsd.img}
-```
-
-### Examples
-
-https://copy.sh/v86/
