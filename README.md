@@ -11,10 +11,10 @@ https://github.com/copy/images
 
 https://github.com/copy/v86/blob/master/docs/archlinux.md
 
-- execute script `/public/scripts/1.sh`
--- download archlinux32 image 
--- create hda image file
--- boot iso file and mount hda image file
+- execute script `/public/scripts/1.sh`  
+-- download archlinux32 image  
+-- create hda image file  
+-- boot iso file and mount hda image file  
 
 ```shell
 ## download archlinux32 image
@@ -31,17 +31,17 @@ qemu-img create archlinux32-2021.04.06-i686.img 5G
 qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.04.06-i686.iso -boot d -m 1024
 ```
 
-- switch to qemu console
+- switch to qemu console  
 
 ```shell
 ## download script
 curl -O 192.168.xxx.xxx:xxxx/2.sh
 ```
 
-- execute script `/public/scripts/2.sh`
--- create and mount filesystem `/dev/sda1`
--- setting up `linux`
--- setting up `bootloader`
+- execute script `/public/scripts/2.sh`  
+-- create and mount filesystem `/dev/sda1`  
+-- setting up `linux`  
+-- setting up `bootloader`  
 
 ```shell
 ## load custon keymap
