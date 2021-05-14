@@ -17,7 +17,7 @@ https://copy.sh/v86/
 
 https://github.com/copy/v86/blob/master/docs/archlinux.md  
 
-- execute script `/scripts/1.sh`  
+- execute script `/scripts/archlinux32/1.sh`  
 -- download archlinux32 image  
 -- create hda image file  
 -- boot iso file and mount hda image file  
@@ -43,16 +43,20 @@ qemu-img create archlinux32-2021.04.06-i686.img 5G
 qemu-system-i386 -hda archlinux32-2021.04.06-i686.img -cdrom archlinux32-2021.04.06-i686.iso -boot d -m 1024
 ```
 
-- switch to qemu console  
+- switch to `qemu gui`  
 
 ```shell
+# loadkeys de-latin1
+
 ## download script
 curl -O 192.168.xxx.xxx:xxxx/2.sh
 curl -O 192.168.xxx.xxx:xxxx/3.sh
 curl -O 192.168.xxx.xxx:xxxx/4.sh
+
+chmod +x *.sh
 ```
 
-- execute script `/scripts/2.sh`  
+- execute script `/scripts/archlinux32/2.sh`  
 -- create and mount filesystem `/dev/sda1`  
 -- setting up `linux`  
 -- setting up `bootloader`  
@@ -62,7 +66,7 @@ curl -O 192.168.xxx.xxx:xxxx/4.sh
 # BOOTABLE ARCHLINUX32 #
 ########################
 
-## load custon keymap
+## load custom keymap
 loadkeys de-latin1
 
 ###
@@ -153,23 +157,4 @@ Start a simple http server.
 ```
 npm install -g http-server
 http-server -p 8000
-```
-
-### using Qemu & BuildRoot
-
-```shell
-wget https://buildroot.uclibc.org/downloads/buildroot-2021.02.1.tar.gz
-tar -xvzf buildroot-2021.02.1.tar.gz
-
-cd buildroot-2021.02.1
-
-make menuconfig
-make nconfig
-make xconfig
-make qconfig
-
-make list-defconfigs
-
-make qemu_x86_defconfig
-make
 ```

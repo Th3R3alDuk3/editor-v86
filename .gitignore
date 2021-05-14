@@ -1,5 +1,4 @@
-public/bios
-public/image
-public/9p
+public/image/*
+public/9p/*
 node_modules/*
 package-lock.json

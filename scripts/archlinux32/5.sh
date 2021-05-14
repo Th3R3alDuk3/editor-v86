@@ -13,7 +13,7 @@ sudo kpartx -a /dev/loop12vim
 sudo mount /dev/mapper/loop12p1 mnt
 
 # make dirs
-mkdir -p out/arch32
+mkdir -p out/archlinux32
 
 # https://github.com/copy/v86/tree/master/tools
 wget https://github.com/copy/v86/blob/3791d63ffd09881782690902c6ee57f0edbd56a3/tools/fs2json.py
@@ -22,9 +22,9 @@ wget https://github.com/copy/v86/blob/3791d63ffd09881782690902c6ee57f0edbd56a3/t
 sudo python fs2json.py --exclude /boot/ --out out/fs.json mnt
 
 ## copy filesystem
-sudo rsync -q -av mnt/ out/arch32
+sudo rsync -q -av mnt/ out/archlinux32
 ## chown to nonroot user
-sudo chown -R $(whoami):$(whoami) out/arch32
+sudo chown -R $(whoami):$(whoami) out/archlinux32
 
 ## clean up mounts
 sudo umount diskmount -f

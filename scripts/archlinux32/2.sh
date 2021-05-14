@@ -2,7 +2,7 @@
 # BOOTABLE ARCHLINUX32 #
 ########################
 
-## load custon keymap
+## load custom keymap
 loadkeys de-latin1
 
 ###
