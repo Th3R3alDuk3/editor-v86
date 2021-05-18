@@ -22,8 +22,8 @@
 
                 var emulator = window.emulator = new V86Starter({
                     wasm_path: "v86/v86.wasm",
-                    memory_size: 64 * 1024 * 1024,
-                    vga_memory_size: 2 * 1024 * 1024,
+                    memory_size: 512 * 1024 * 1024,
+                    vga_memory_size: 8 * 1024 * 1024,
                     screen_container: document.getElementById("screen_container"),
                     bios: {
                         url: "bios/seabios.bin",
@@ -32,16 +32,31 @@
                         url: "bios/vgabios.bin",
                     },
                     hda: {
-                        url: "image/archlinux32-2021.04.06-i686.img",
+                        url: "9p/archlinux32.img",
                         async: true
+                    },
+                    filesystem: {
+                        baseurl: "9p/archlinux32/",
+                        basefs: "9p/fs.json"
                     },
                     autostart: true
                 });
 
-                emulator.add_listener("serial0-output-line", (line) => {
-                    console.log(line);
+                emulator.add_listener("serial0-output-char", (char) => {
+
+                    if(char === "\r") {
+                        return;
+                    }
+
+                    data += char;
+                    console.log(data);
+
+                    if(data.startsWith("[root@archlinux32 ")) {
+                        emulator.serial0_send("ls");
+                        console.log("ready");
+                    }
                 });
-                
+
             }
 
         </script>

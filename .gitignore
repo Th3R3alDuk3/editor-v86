@@ -1,4 +1,7 @@
-public/image/*
-public/9p/*
-node_modules/*
+*.bmp
+output-qemu
+packer_cache
+public/9p
+public/image
+node_modules
 package-lock.json
