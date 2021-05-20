@@ -1,4 +1,5 @@
 *.bmp
+*.exe
 output-qemu
 packer_cache
 public/9p

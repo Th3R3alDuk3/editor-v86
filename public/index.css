@@ -23,5 +23,7 @@ body {
     max-height: 300px;
 }
 
-#screen_container {
+.flex-item2 {
+    /* size */
+    height: 100%;
 }
