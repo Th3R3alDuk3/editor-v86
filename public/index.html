@@ -9,16 +9,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
 
     </head>
     <body>
 
-        <script type="text/javascript" src="v86/libv86.js"></script>
+        <script type="text/javascript" src="node_modules/xterm/lib/xterm.js"></script>
+        <script type="text/javascript" src="v86/libv86.js"></script>        
         <script type="text/javascript">
 
             "use strict";
             
             window.onload = () => {
+
+                /* XTERM */
+
+                var terminal = new Terminal();
+
+                terminal.open(
+                    document.getElementById("terminal")
+                );
+
+                /* V86 */
 
                 var emulator = window.emulator = new V86Starter({
                     wasm_path: "v86/v86.wasm",
@@ -36,7 +48,9 @@
                         async: true
                     },
                     autostart: true
-                });
+                });                                
+
+                /**/
 
                 var serial0 = document.getElementById("serial0");
                 var serial0Ready = false;
@@ -46,27 +60,24 @@
                     if (line.startsWith("Last login:"))
                         serial0Ready = true;
 
-                    if (serial0Ready)
-                        serial0.value += line;
-                    else
-                        console.log(line);                        
+                    terminal.write(line);                  
 
                 });
                 
                 var code = `#include <stdio.h>
-                int main() {
-                    printf("Hello World!\n");
-                    for(int i = 0; i < 10; i++) {
-                        printf("%d\n", i);
-                    }
-                }`;
+int main() {
+    printf("Hello World!\n");
+    for(int i = 0; i < 10; i++) {
+        printf("%d\n", i);
+    }
+}`;
 
                 const interval = setInterval(function() {
                     if (serial0Ready) {
                         emulator.serial0_send("echo '" + code + "' |  tcc -run -\n");
                         clearInterval(interval);
                     }
-                }, 1000);
+                }, 3000);
                 
             }
 
@@ -82,7 +93,7 @@
             </div>
 
             <div class="flex-item2">
-                <textarea id="serial0"></textarea>
+                <div id="terminal"></div>
             </div>
 
         </div>
