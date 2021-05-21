@@ -46,7 +46,7 @@ pacman --noconfirm --root /mnt -S dhcpcd net-tools
 # install editors
 pacman --noconfirm --root /mnt -S vim nano
 # install addtional tools
-pacman --noconfirm --root /mnt -S tcc sl
+pacman --noconfirm --root /mnt -S sl tcc python
 
 # clean cache
 pacman --noconfirm --root /mnt -Sc
@@ -94,9 +94,12 @@ echo "root:toor" | chpasswd
 # TELETYPE
 
 # enable tty1
-systemctl enable getty@tty1.service
+# systemctl enable getty@tty1.service
+systemctl disable getty@tty1.service
+
 # enable ttyS0
 systemctl enable serial-getty@ttyS0.service
+# systemctl disable serial-getty@ttyS0.service
 
 #---
 
@@ -137,9 +140,9 @@ arch-chroot /mnt bash bootstrap.sh
 
 # autologin tty1
 # TMP=/mnt/etc/systemd/system/getty.target.wants/getty@tty1.service
-TMP=/mnt/usr/lib/systemd/system/getty@.service
-sed -i "s/agetty -o '.*'/agetty --autologin root/g" $TMP
-sed -i "s/Type=idle/Type=simple/g" $TMP
+# TMP=/mnt/usr/lib/systemd/system/getty@.service
+# sed -i "s/agetty -o '.*'/agetty --autologin root/g" $TMP
+# sed -i "s/Type=idle/Type=simple/g" $TMP
 
 # autologin ttyS0
 # TMP=/mnt/etc/systemd/system/getty.target.wants/serial-getty@ttyS0.service
