@@ -1,6 +1,6 @@
 # editor-v86
 
-[Demo](https://editor-x86.glitch.me/)  
+[Demo](https://editor-v86.glitch.me/)  
     
 
 Some examples for v86 emulation:  
@@ -15,7 +15,7 @@ https://github.com/copy/v86/blob/master/docs/archlinux.md
 
 - `cd scripts/archlinux32`
 - execute packer `packer build packer.json`  
--- download archlinux32 image  
+-- download `archlinux32 image`  
 -- use `qemu`  
 --- create hda  
 --- boot iso and mount hda  
@@ -26,7 +26,7 @@ http://tinycorelinux.net/
 
 - `cd scripts/tinycore`
 - read `README`  
--- download tinycore image  
+-- download `tinycore image`  
 -- use `qemu`  
 --- create hda  
 --- boot is and mount hda  
