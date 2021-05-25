@@ -25,7 +25,7 @@ https://github.com/copy/v86/blob/master/docs/archlinux.md
 http://tinycorelinux.net/  
 
 - `cd scripts/tinycore`
-- read `README`
+- read `README`  
 -- download tinycore image  
 -- use `qemu`  
 --- create hda  
