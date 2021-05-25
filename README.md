@@ -18,7 +18,7 @@ https://github.com/copy/v86/blob/master/docs/archlinux.md
 -- download archlinux32 image  
 -- use `qemu`  
 --- create hda  
---- boot iso and mount hda
+--- boot iso and mount hda  
 
 ### TinyCore
 
@@ -26,10 +26,10 @@ http://tinycorelinux.net/
 
 - `cd scripts/tinycore`
 - read `README`
--- download tinycore image
+-- download tinycore image  
 -- use `qemu`  
 --- create hda  
---- boot is and mount hda
+--- boot is and mount hda  
 
 ### Other Images
 
