@@ -11,6 +11,7 @@ body {
 .flex-container {          
     /* flex */
     display: flex;
+    flex-basis: auto;
     flex-direction: column;   
     /* size */
     height: calc(100vh - 60px);

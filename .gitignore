@@ -1,5 +1,7 @@
 *.bmp
 *.exe
+*.iso
+*.img
 output-qemu
 packer_cache
 public/9p

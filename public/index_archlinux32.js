@@ -51,7 +51,7 @@ void main() {
             url: "bios/vgabios.bin",
         },
         hda: {
-            url: "image/archlinux32.img",
+            url: "images/archlinux32.img",
             async: true
         },
         serial_container_xtermjs: terminal,
@@ -66,9 +66,21 @@ void main() {
             reject(new Error("v86 timeout"));
         }, 300 * 1000);
 
-        emulator.add_listener("serial0-output-line", (line) => {
-            if (line.startsWith("Last login:"))
-                resolve();
+        var line = "";
+
+        emulator.add_listener("serial0-output-char", (char) => {
+
+            if (char === "\n")
+                line = "";
+            else {
+                
+                line += char;
+    
+                if (line.endsWith("[root@archlinux32 ~]#"))
+                    resolve();
+
+            }            
+
         });
 
     }).then(() => {
@@ -126,7 +138,7 @@ void main() {
     /**/
 
     window.onresize = () => {
-        window.location.reload();
+        // window.location.reload();
     }
     
 }
