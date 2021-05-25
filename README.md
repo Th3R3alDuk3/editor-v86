@@ -1,4 +1,4 @@
-# editor-v86-tcc
+# editor-v86
   
 Some images for v86 emulation:  
 https://github.com/copy/images  
