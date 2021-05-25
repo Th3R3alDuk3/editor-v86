@@ -76,8 +76,11 @@ void main() {
                 
                 line += char;
     
-                if (line.endsWith("[root@archlinux32 ~]#"))
+                if (line.endsWith("[root@archlinux32 ~]#")) {                    
+                    emulator.serial0_send("clear");
+                    emulator.serial0_send("\n");
                     resolve();
+                }
 
             }            
 

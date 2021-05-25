@@ -79,8 +79,11 @@ void main() {
                 if (line.endsWith("box login:")) {
                     emulator.serial0_send("tc");
                     emulator.serial0_send("\n");
-                } else if (line.endsWith("tc@box:~$")) 
+                } else if (line.endsWith("tc@box:~$")) {
+                    emulator.serial0_send("clear");
+                    emulator.serial0_send("\n");
                     resolve();
+                }
 
             }            
 
