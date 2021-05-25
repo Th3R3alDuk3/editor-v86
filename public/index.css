@@ -6,6 +6,8 @@ body {
     color: #fff;
 }
 
+/**/
+
 .flex-container {          
     /* flex */
     display: flex;
@@ -29,10 +31,17 @@ body {
     flex: auto;
 }
 
-.flex-item3 {    
+.flex-item3 {       
+    /* size */
+    height: 20px;
+}
+
+.flex-item4 {    
     /* size */
     height: 300px;
 }
+
+/**/
 
 #select {
     /* color */
@@ -76,7 +85,9 @@ body {
     color: #006400;
 }
 
-#editor, #terminal {
+/**/
+
+#editor {
     /* size */
     height: 100%;
     /* border */
@@ -84,31 +95,6 @@ body {
 }
 
 #terminal {
-    box-sizing: border-box;
     /* size */
-    width: 100%;    
-    /* font */
-    font-family: Consolas, "Courier New", monospace;
-    font-size: 20;
-    /* color */
-    background: #1e1e1e;
-    color: #fff;
-    /* distance */
-    padding: 15px;
-    /* additional */
-    overflow: hidden;
-    resize: none;
-}
-
-#terminal:focus, #terminal:hover, #terminal:active {
-    /* border */
-    outline: 0;
-}
-
-#loader {
-    /* position */
-    position: absolute;
-    left: calc(50% - 125px);
-    /* size */
-    width: 250px;
+    height: 100%;
 }

@@ -43,10 +43,8 @@ pacman --noconfirm --root /mnt -Sy
 pacman --noconfirm --root /mnt -S grub
 # install network tools
 pacman --noconfirm --root /mnt -S dhcpcd net-tools
-# install editors
-pacman --noconfirm --root /mnt -S vim nano
 # install addtional tools
-pacman --noconfirm --root /mnt -S sl tcc python
+pacman --noconfirm --root /mnt -S gcc tcc python
 
 # clean cache
 pacman --noconfirm --root /mnt -Sc
@@ -74,6 +72,11 @@ sed -i "s/GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=hidden/g" $TMP
 
 #---
 
+# hostname
+echo "archlinux32" > /mnt/etc/hostname
+
+#---
+
 # CHROOT BOOTSTRAP
 
 cat << 'EOF' > /mnt/bootstrap.sh
@@ -93,13 +96,12 @@ echo "root:toor" | chpasswd
 
 # TELETYPE
 
-# enable tty1
-# systemctl enable getty@tty1.service
+# disable tty1
 systemctl disable getty@tty1.service
 
-# enable ttyS0
+# enable ttySx
 systemctl enable serial-getty@ttyS0.service
-# systemctl disable serial-getty@ttyS0.service
+systemctl enable serial-getty@ttyS1.service
 
 #---
 
@@ -107,19 +109,8 @@ systemctl enable serial-getty@ttyS0.service
 
 # TODO: change locales, timezone, ...
 # https://wiki.archlinux.org/title/Installation_guide
-# https://wiki.archlinux.de/title/Arch_Linux_auf_Deutsch_stellen#localectl
-
-# timezone
-timedatectl set-timezone Europe/Berlin
-
-# keyboard
 # https://wiki.archlinux.de/title/Arch_Linux_auf_Deutsch_stellen
-# https://wiki.archlinux.org/title/Linux_console/Keyboard_configuration
-locale-gen
-localectl set-keymap de-latin1-nodeadkeys
-
-# hostname
-echo "archlinux32" > /etc/hostname
+timedatectl set-timezone Europe/Berlin
 
 #---
 
@@ -137,12 +128,6 @@ arch-chroot /mnt bash bootstrap.sh
 # AUTOLOGIN
 
 # https://wiki.archlinux.org/title/Getty#Automatic_login_to_virtual_console
-
-# autologin tty1
-# TMP=/mnt/etc/systemd/system/getty.target.wants/getty@tty1.service
-# TMP=/mnt/usr/lib/systemd/system/getty@.service
-# sed -i "s/agetty -o '.*'/agetty --autologin root/g" $TMP
-# sed -i "s/Type=idle/Type=simple/g" $TMP
 
 # autologin ttyS0
 # TMP=/mnt/etc/systemd/system/getty.target.wants/serial-getty@ttyS0.service

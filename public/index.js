@@ -6,7 +6,6 @@ window.onload = () => {
     
     var select = document.getElementById("select");   
     var button = document.getElementById("button");
-    var loader = document.getElementById("loader");
 
     /* 
      * MONACO-EDITOR 
@@ -55,7 +54,7 @@ void main() {
             url: "image/archlinux32.img",
             async: true
         },
-        serial_container: terminal,
+        serial_container_xtermjs: terminal,
         autostart: true
     });
     
@@ -64,7 +63,7 @@ void main() {
     new Promise((resolve, reject) => { 
 
         setTimeout(() => {
-            reject(new Error("timeout ready"));
+            reject(new Error("v86 timeout"));
         }, 300 * 1000);
 
         emulator.add_listener("serial0-output-line", (line) => {
@@ -74,12 +73,7 @@ void main() {
 
     }).then(() => {
         button.disabled = false;      
-        loader.style.visibility = "hidden";
-    });   
-
-    /**/
-
-    // TODO: filter textarea
+    });
 
     /**/
     
@@ -94,15 +88,18 @@ void main() {
 
     button.onclick = (event) => {
 
-        let option = select.options[select.selectedIndex];
-    
         emulator.serial0_send("cat << 'EOF' > ./out")            
         emulator.serial0_send("\n");
         emulator.serial0_send(window.editor.getValue())
         emulator.serial0_send("\n");
         emulator.serial0_send("EOF");
         emulator.serial0_send("\n");
-    
+
+        emulator.serial0_send("clear");
+        emulator.serial0_send("\n");
+        
+        let option = select.options[select.selectedIndex];
+
         switch(option.value) {
     
             case "c":
