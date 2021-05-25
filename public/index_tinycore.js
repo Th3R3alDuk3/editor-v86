@@ -80,9 +80,9 @@ void main() {
                     emulator.serial0_send("tc");
                     emulator.serial0_send("\n");
                 } else if (line.endsWith("tc@box:~$")) {
-                    emulator.remove_listener("serial0-output-char");
-                    emulator.serial0_send("clear");
-                    emulator.serial0_send("\n");
+                    // emulator.remove_listener("serial0-output-char", this);
+                    // emulator.serial0_send("clear");
+                    // emulator.serial0_send("\n");
                     resolve();
                 }
 
