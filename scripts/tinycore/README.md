@@ -1,6 +1,6 @@
 # TinyCore
 
-## Download ISO
+## ISO
 
 https://distro.ibiblio.org/tinycorelinux/downloads.html
 

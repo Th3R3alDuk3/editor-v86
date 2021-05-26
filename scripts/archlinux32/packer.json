@@ -1,6 +1,7 @@
 {
     "builders": [
         {
+
             "type": "qemu",
             "qemu_binary": "qemu-system-i386",        
 
@@ -26,18 +27,21 @@
             "boot_wait": "3s",
             "boot_command": [
                 "<enter><wait90>",
-                "echo 'root:toor' | chpasswd<enter><wait3>",
-                "systemctl start sshd<enter>"
+                "echo 'root:toor' | chpasswd",
+                "<enter><wait3>",
+                "systemctl start sshd",
+                "<enter>"
             ],
             
             "shutdown_command": "shutdown -P now"
         }
+
     ],
     "provisioners": [
         {
             "type": "shell",
             "scripts": [
-                "2.sh"
+                "packer.sh"
             ]
         }
     ]
