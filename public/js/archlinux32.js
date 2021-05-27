@@ -39,7 +39,7 @@ new Promise(function(resolve, reject) {
 
     var line = "";
 
-    parrot.add_listener("serial0-output-char", function filter(char) {
+    parrot.add_listener("serial0-output-char", function listener(char) {
 
         if (char === "\n") {
             line = "";
@@ -85,7 +85,7 @@ _button.onclick = function() {
             break;
 
         case 2: // python
-            parrot.serial0_send_line("python2 ./out");
+            parrot.serial0_send_line("python ./out");
             break;
 
         default:
