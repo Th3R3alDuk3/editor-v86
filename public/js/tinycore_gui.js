@@ -1,5 +1,7 @@
 "use strict";
 
+var _parrot = document.getElementById("parrot"); 
+
 /* 
  * V86 EMULATOR
  * https://github.com/Th3R3alDuk3/v86
@@ -29,6 +31,6 @@ var parrot = new V86Starter({
         url: "../assets/images/tinycore_gui.img",
         async: answer
     },
-    screen_container : document.getElementById("parrot"),
+    screen_container : _parrot,
     autostart: true
 });

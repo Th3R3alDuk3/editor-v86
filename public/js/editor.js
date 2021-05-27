@@ -1,10 +1,7 @@
 "use strict";
 
-var _editor = document.getElementById("editor");
-var _parrot = document.getElementById("parrot"); 
-
-var _select = document.getElementById("select");   
-var _button = document.getElementById("button");
+var _editor = document.getElementById("editor"); 
+var _select = document.getElementById("select"); 
 
 /**/ 
 
@@ -14,6 +11,7 @@ var _button = document.getElementById("button");
  */
 
 require.config({paths: {vs: "node_modules/monaco-editor/min/vs"}});
+
 require(["vs/editor/editor.main"], function() {
 
     var editor = window.editor = monaco.editor.create(
@@ -38,9 +36,3 @@ void main() {
     }
 
 });
-
-/**/
-
-window.onresize = function() {
-    // window.location.reload();
-}

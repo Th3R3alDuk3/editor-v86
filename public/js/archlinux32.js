@@ -1,5 +1,9 @@
 "use strict";
 
+var _parrot = document.getElementById("parrot"); 
+var _select = document.getElementById("select");  
+var _button = document.getElementById("button");
+
 /* 
  * V86 EMULATOR
  * https://github.com/Th3R3alDuk3/v86
