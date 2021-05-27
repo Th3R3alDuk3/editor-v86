@@ -9,9 +9,11 @@
  * serial0_send_line
  */
 
-var parrot = window.parrot = new V86Starter({        
+var answer = confirm("Download image using an asynchronous connection?");
+
+var parrot = new V86Starter({        
     wasm_path: "../wasm/v86.wasm",
-    memory_size: 64 * 1024 * 1024,
+    memory_size: 128 * 1024 * 1024,
     bios: {
         url: "../assets/bios/seabios.bin",
         size: 128 * 1024,
@@ -19,7 +21,7 @@ var parrot = window.parrot = new V86Starter({
     },
     hda: {
         url: "../assets/images/archlinux32.img",
-        async: true
+        async: answer
     },
     serial_container_xtermjs: _parrot,
     autostart: true
@@ -37,7 +39,7 @@ new Promise(function(resolve, reject) {
 
     var line = "";
 
-    parrot.add_listener("serial0-output-char", function listener(char) {
+    parrot.add_listener("serial0-output-char", function filter(char) {
 
         if (char === "\n") {
             line = "";
@@ -68,16 +70,22 @@ _button.onclick = function() {
     parrot.serial0_send_line("EOF");
 
     parrot.serial0_send_line("clear");
-    
-    let option = _select.options[_select.selectedIndex];
-    switch(option.value) {
 
-        case "c":            
+    /**/
+    
+    switch(_select.selectedIndex) {
+
+        case 0: // tcc            
             parrot.serial0_send_line("tcc -run ./out");
             break;
 
-        case "python":
-            parrot.serial0_send_line("python ./out");
+        case 1: // gcc     
+            parrot.serial0_send_line("mv -f ./out ./out.c");
+            parrot.serial0_send_line("gcc ./out.c -o ./out; ./out");
+            break;
+
+        case 2: // python
+            parrot.serial0_send_line("python2 ./out");
             break;
 
         default:

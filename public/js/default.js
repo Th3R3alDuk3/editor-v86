@@ -31,6 +31,7 @@ void main() {
     /**/
 
     _select.onchange = function(event) {
+        console.log(event.target);
         monaco.editor.setModelLanguage(
             editor.getModel(), 
             event.target.value
