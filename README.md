@@ -1,8 +1,9 @@
 # editor-v86
 
 [Demo](https://editor-v86.glitch.me/)  
-    
-
+  
+![editor-v86](public/assets/gif/editor.gif "editor-v86")  
+  
 Some examples for v86 emulation:  
 https://github.com/copy/v86/tree/master/examples  
 https://copy.sh/v86/
