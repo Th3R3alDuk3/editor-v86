@@ -4,7 +4,7 @@
 *.img
 output-qemu
 packer_cache
-public/9p
+scripts/archlinux32/9p
 public/image
 node_modules
 package-lock.json
