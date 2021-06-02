@@ -24,7 +24,7 @@ var parrot = new V86Starter({
         async: false
     },
     hda: {
-        url: "../assets/images/alpinelinux.img",
+        url: "../assets/images/alpinelinux.raw",
         async: answer
     },
     serial_container_xtermjs: _parrot,

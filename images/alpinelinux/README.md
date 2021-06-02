@@ -26,20 +26,21 @@ https://wiki.alpinelinux.org/wiki/Enable_Serial_Console_on_Boot
 default_kernel_opts="console=ttyS0,9600 quiet ..."
 serial_port=0
 serial_baud=9600
+timeout=1
 ...
 ```
 ```
 update-extlinux
+reboot
 ```
 
 #### install packages
 
 ```
-apk update
-
 apk add gcc
 apk add python3
 ```
+Compile `tcc` for ure system ...
 ```
 apk add musl-dev
 apk add --virtual ./build-deps make
@@ -53,4 +54,6 @@ make
 make install
 
 apk del ./build-deps
+
+poweroff
 ```

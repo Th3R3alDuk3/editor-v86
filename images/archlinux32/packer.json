@@ -5,7 +5,7 @@
             "type": "qemu",
             "qemu_binary": "qemu-system-i386",        
 
-            "vm_name": "archlinux32.img",
+            "vm_name": "archlinux32.raw",
             "headless": true,
 
             "cpus": 4,

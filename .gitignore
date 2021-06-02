@@ -3,6 +3,8 @@
 *.exe
 *.iso
 *.img
+*.raw
+*.qcow2
 output-qemu
 packer_cache
 scripts/archlinux32/9p

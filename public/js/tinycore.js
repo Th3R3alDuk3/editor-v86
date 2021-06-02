@@ -24,7 +24,7 @@ var parrot = new V86Starter({
         async: false
     },
     hda: {
-        url: "../assets/images/tinycore.img",
+        url: "../assets/images/tinycore.raw",
         async: answer
     },
     serial_container_xtermjs: _parrot,

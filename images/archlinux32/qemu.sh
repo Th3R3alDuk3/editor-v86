@@ -14,7 +14,7 @@ sudo apt install qemu-system -y
 wget -nc https://mirror.archlinux32.org/archisos/archlinux32-2021.04.06-i686.iso
 
 # create hda
-qemu-img create archlinux32.img 2G
+qemu-img create -f raw archlinux32.raw 2G
 
 # boot iso and mount hda
-qemu-system-i386 -hda archlinux32.img -cdrom archlinux32-2021.04.06-i686.iso -boot d -m 512
+qemu-system-i386 -hda archlinux32.raw -cdrom archlinux32-2021.04.06-i686.iso -boot d -m 512

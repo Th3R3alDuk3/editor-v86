@@ -24,7 +24,7 @@ var parrot = new V86Starter({
         async: false
     },
     hda: {
-        url: "../assets/images/archlinux32.img",
+        url: "../assets/images/archlinux32.raw",
         async: answer
     },
     serial_container_xtermjs: _parrot,

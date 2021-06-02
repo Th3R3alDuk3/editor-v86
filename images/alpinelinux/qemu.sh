@@ -14,7 +14,7 @@ sudo apt install qemu-system -y
 wget -nc https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86/alpine-virt-3.13.5-x86.iso
 
 # create hda
-qemu-img create alpinelinux.img 600M
+qemu-img create -f raw alpinelinux.raw 500M
 
 # boot iso and mount hda
-qemu-system-i386 -hda alpinelinux.img -cdrom alpine-virt-3.13.5-x86.iso -boot d -m 512
+qemu-system-i386 -hda alpinelinux.raw -cdrom alpine-virt-3.13.5-x86.iso -boot d -m 512

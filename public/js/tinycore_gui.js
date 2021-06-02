@@ -28,7 +28,7 @@ var parrot = new V86Starter({
         async: false
     },
     hda: {
-        url: "../assets/images/tinycore_gui.img",
+        url: "../assets/images/tinycore_gui.raw",
         async: answer
     },
     screen_container : _parrot,

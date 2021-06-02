@@ -14,7 +14,7 @@ sudo apt install qemu-system -y
 wget -nc http://tinycorelinux.net/12.x/x86/release/CorePlus-current.iso
 
 # create hda
-qemu-img create tinycore.img 150M
+qemu-img create -f raw tinycore.raw 150M
 
 # boot iso and mount hda
-qemu-system-i386 -hda tinycore.img -cdrom CorePlus-current.iso -boot d -m 512
+qemu-system-i386 -hda tinycore.raw -cdrom CorePlus-current.iso -boot d -m 512
