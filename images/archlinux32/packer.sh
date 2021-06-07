@@ -14,6 +14,7 @@ loadkeys de-latin1-nodeadkeys
 # PARTITION
 
 # dos partition table
+# cfdisk
 echo -e "o\nn\np\n1\n\n\nw" | fdisk /dev/sda
 
 # format filesystem
@@ -27,8 +28,8 @@ mount /dev/sda1 /mnt
 # LINUX
 
 # https://wiki.archlinux.org/title/Kernel/Arch_Build_System
-# pacstrap /mnt base base-devel linux linux-firmware
-pacstrap /mnt base base-devel linux-lts
+# pacstrap /mnt base base-devel linux-lts linux-firmware
+pacstrap /mnt base base-devel linux
 
 # automount partitions
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -38,7 +39,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # PACKAGES
 
 # update database cache
-pacman --noconfirm --root /mnt -Sy
+pacman --noconfirm --root /mnt -Syu
 
 # install bootloader
 pacman --noconfirm --root /mnt -S grub
@@ -98,11 +99,10 @@ echo "root:toor" | chpasswd
 # TELETYPE
 
 # tty1
-systemctl disable getty@tty1.service
+# systemctl disable getty@tty1.service
 
-# ttySx
+# ttyS0
 systemctl enable serial-getty@ttyS0.service
-systemctl enable serial-getty@ttyS1.service
 
 #---
 
@@ -140,5 +140,5 @@ sed -i "s/Type=idle/Type=simple/g" $TMP
 
 umount -R /mnt
 
-# shutdown -P now
+# poweroff
 # reboot

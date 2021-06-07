@@ -57,6 +57,7 @@ useradd -M test
 
 # test password
 echo "test:test" | chpasswd
+
 # change owner
 chown -R test: ../../build
 

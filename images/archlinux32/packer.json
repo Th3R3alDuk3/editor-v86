@@ -11,7 +11,7 @@
             "cpus": 4,
             "memory": 4096,
 
-            "disk_size": 2000,
+            "disk_size": 5000,
             "disk_interface": "ide",
             "format": "raw",
 

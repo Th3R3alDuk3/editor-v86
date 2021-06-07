@@ -28,7 +28,8 @@ var parrot = new V86Starter({
         async: answer
     },
     serial_container_xtermjs: _parrot,
-    autostart: true
+    autostart: true,
+    boot_order: 0x132
 });
 
 /**/

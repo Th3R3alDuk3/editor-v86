@@ -8,27 +8,25 @@
 
 ### ArchLinux32
 
+https://archlinux32.org/  
 https://github.com/copy/v86/blob/master/docs/archlinux.md  
-
-- `cd scripts/archlinux32`
+  
+- `cd images/archlinux32`
 - `README`
-- execute packer `packer build packer.json` 
+- execute packer `packer build packer.json`
+- TODO: `VirtIO 9p` filesystem  
 
 ### TinyCore
 
 http://tinycorelinux.net/  
-
-- `cd scripts/tinycore`
+  
+- `cd images/tinycore`
 - `README`
 
-### others
+### AlpineLinux
 
-Some other images for v86 emulation:  
-https://github.com/copy/images  
-
-```
-wget -P images/ https://copy.sh/v86/images/{linux.iso,linux3.iso,kolibri.img,windows101.img,os8.dsk,freedos722.img,openbsd.img}
-```  
+- `cd images/alpinelinux`
+- `README`
 
 ## examples
 

@@ -32,5 +32,6 @@ var parrot = new V86Starter({
         async: answer
     },
     screen_container : _parrot,
-    autostart: true
+    autostart: true,
+    boot_order: 0x132
 });

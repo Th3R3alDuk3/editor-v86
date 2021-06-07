@@ -18,7 +18,7 @@ Download and install `Packer`.
 Use the following command to build your own `ArchLinux32` image.
 
 ```
-packer build packer-qemu.json
+packer build packer.json
 ```
 
 #### QEMU

@@ -5,6 +5,11 @@
 
 # https://github.com/copy/v86/blob/master/docs/linux-9p-image.md
 
+# mount filesystem
+mount /dev/sda1 /mnt
+
+#---
+
 # initcpio hooks
 mkdir -p /mnt/etc/initcpio/hooks
 cat << 'EOF' > /mnt/etc/initcpio/hooks/9p_root
@@ -32,9 +37,18 @@ build() {
 EOF
 
 # initramfs modules and hooks support 9p
-PATH=/mnt/etc/mkinitcpio.conf
-sed -i 's/MODULES=(/MODULES=(virtio_pci 9p 9pnet 9pnet_virtio /g' $PATH
-sed -i 's/HOOKS=(/HOOKS=(9p_root /g' $PATH
+TMP=/mnt/etc/mkinitcpio.conf
+sed -i 's/MODULES=(/MODULES=(virtio_pci 9p 9pnet 9pnet_virtio /g' $TMP
+sed -i 's/HOOKS=(/HOOKS=(9p_root /g' $TMP
+
+#---
 
 # write initramfs images
 arch-chroot /mnt bash 'mkinitcpio -P'
+
+#---
+
+umount -R /mnt
+
+# poweroff
+# reboot

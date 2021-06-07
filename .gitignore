@@ -1,5 +1,7 @@
 *.gz
+*.xz
 *.bmp
+*.jpg
 *.exe
 *.iso
 *.img
@@ -7,7 +9,6 @@
 *.qcow2
 output-qemu
 packer_cache
-scripts/archlinux32/9p
-public/image
+kernel
 node_modules
 package-lock.json
