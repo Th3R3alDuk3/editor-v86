@@ -12,3 +12,4 @@ packer_cache
 kernel
 node_modules
 package-lock.json
+seabios

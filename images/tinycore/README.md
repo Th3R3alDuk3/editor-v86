@@ -5,6 +5,7 @@ http://tinycorelinux.net
 ## Installation
 
 https://distro.ibiblio.org/tinycorelinux/install.html
+http://tinycorelinux.net/install_manual.html
 
 ### ISOs
 
