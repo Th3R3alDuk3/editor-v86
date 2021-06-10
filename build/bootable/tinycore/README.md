@@ -56,7 +56,9 @@ https://mivilisnet.wordpress.com/2018/12/24/microcore-on-the-serial-console/
 #### install packages
 
 ```
-tce-load -wi tcc gcc python
+tce-load -wi tcc
+tce-load -wi gcc
+tce-load -wi python
 ```
 
 ### backup filesystem 

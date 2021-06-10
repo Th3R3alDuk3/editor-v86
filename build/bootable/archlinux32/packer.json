@@ -33,7 +33,7 @@
                 "<enter>"
             ],
             
-            "shutdown_command": "shutdown -P now"
+            "shutdown_command": "poweroff"
         }
 
     ],
@@ -45,4 +45,4 @@
             ]
         }
     ]
-  }
+}
