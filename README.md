@@ -2,7 +2,7 @@
 
 [Demo](https://editor-v86.glitch.me/)  
   
-![editor-v86](public/assets/gif/editor.gif "editor-v86")  
+![editor-v86](public/img/editor.gif "editor-v86")  
   
 ## images
 
@@ -11,7 +11,7 @@
 https://archlinux32.org/  
 https://github.com/copy/v86/blob/master/docs/archlinux.md  
   
-- `cd images/archlinux32`
+- `cd build/bootable/archlinux32`
 - `README`
 - execute packer `packer build packer.json`
 - TODO: `VirtIO 9p` filesystem  
@@ -20,12 +20,12 @@ https://github.com/copy/v86/blob/master/docs/archlinux.md
 
 http://tinycorelinux.net/  
   
-- `cd images/tinycore`
+- `cd build/bootable/tinycore`
 - `README`
 
 ### AlpineLinux
 
-- `cd images/alpinelinux`
+- `cd build/bootable/alpinelinux`
 - `README`
 
 ## examples

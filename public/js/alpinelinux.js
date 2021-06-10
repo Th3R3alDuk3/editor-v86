@@ -19,12 +19,12 @@ var parrot = new V86Starter({
     wasm_path: "../wasm/v86.wasm",
     memory_size: 512 * 1024 * 1024,
     bios: {
-        url: "../assets/bios/seabios_small.bin",
+        url: "../bios/seabios_min.bin",
         size: 64 * 1024,
         async: false
     },
     hda: {
-        url: "../assets/images/alpinelinux.raw",
+        url: "../bootable/alpinelinux.raw",
         async: answer
     },
     serial_container_xtermjs: _parrot,

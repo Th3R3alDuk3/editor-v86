@@ -19,12 +19,12 @@ var parrot = new V86Starter({
     wasm_path: "../wasm/v86.wasm",
     memory_size: 512 * 1024 * 1024,
     bios: {
-        url: "../assets/bios/seabios_small.bin",
+        url: "../bios/seabios_min.bin",
         size: 128 * 1024,
         async: false
     },
     hda: {
-        url: "../assets/images/archlinux32.raw",
+        url: "../bootable/archlinux32.raw",
         async: answer
     },
     serial_container_xtermjs: _parrot,

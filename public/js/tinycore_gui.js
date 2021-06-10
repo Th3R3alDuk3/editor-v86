@@ -18,17 +18,17 @@ var parrot = new V86Starter({
     memory_size: 512 * 1024 * 1024,    
     vga_memory_size: 32 * 1024 * 1024,
     bios: {
-        url: "../assets/bios/seabios.bin",
+        url: "../bios/seabios.bin",
         size: 128 * 1024,
         async: false
     },
     vga_bios: {
-        url: "../assets/bios/vgabios.bin",
+        url: "../bios/vgabios.bin",
         size: 35 * 1024,
         async: false
     },
     hda: {
-        url: "../assets/images/tinycore_gui.raw",
+        url: "../bootable/tinycore_gui.raw",
         async: answer
     },
     screen_container : _parrot,

@@ -1,3 +1,0 @@
-# BuildRoot
-
-https://buildroot.org/  
