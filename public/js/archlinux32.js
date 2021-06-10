@@ -19,7 +19,7 @@ var parrot = new V86Starter({
     wasm_path: "../wasm/v86.wasm",
     memory_size: 512 * 1024 * 1024,
     bios: {
-        url: "../assets/bios/seabios.bin",
+        url: "../assets/bios/seabios_small.bin",
         size: 128 * 1024,
         async: false
     },

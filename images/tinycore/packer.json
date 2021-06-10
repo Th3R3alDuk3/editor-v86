@@ -1,0 +1,65 @@
+{
+    "builders": [
+        {
+
+            "type": "qemu",
+            "qemu_binary": "qemu-system-i386",        
+
+            "vm_name": "tinycore.raw",
+            "headless": true,
+
+            "cpus": 4,
+            "memory": 4096,
+
+            "disk_size": 120,
+            "disk_interface": "ide",
+            "format": "raw",
+
+            "iso_url": "http://tinycorelinux.net/12.x/x86/release/Core-12.0.iso",
+            "iso_checksum": "md5:cc1acc24580bab16214088c45f71aeb5",                       
+
+            "communicator": "none",
+
+            "boot_wait": "3s",
+            "boot_command": [
+
+                "<enter><wait15>",
+                "tce-load -wi tc-install",
+                "<enter><wait15>",
+                "sudo tc-install.sh",
+                "<enter><wait1>",
+                "c", "<enter><wait1>",
+                "f", "<enter><wait1>",
+                "1", "<enter><wait1>",
+                "2", "<enter><wait1>",
+                "y", "<enter><wait1>",
+                "<enter><wait1>",
+                "3", "<enter><wait1>",
+                "console=ttyS0,9600",
+                "<enter><wait1>",
+                "y", "<enter><wait15>",
+                "<enter><wait1>",
+
+                "mount /mnt/sda1",
+                "<enter><wait1>",
+
+                "sudo rm -f /etc/sysconfig/tcedir",
+                "<enter><wait1>",
+                "sudo ln -s /mnt/sda1/tce /etc/sysconfig/tcedir",
+                "<enter><wait1>",
+                "tce-load -wi tcc gcc python",
+                "<enter><wait30>",
+
+                "sed -i -e '$a/sbin/getty 9600 ttyS0' /opt/bootsync.sh",                
+                "<enter><wait1>",
+                "filetool.sh -b sda1/tce",
+                "<enter><wait3>",
+
+                "sudo poweroff",
+                "<enter><wait1>"
+
+            ]
+        }
+
+    ]
+  }

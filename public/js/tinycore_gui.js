@@ -15,8 +15,8 @@ var answer = confirm("Download image using an asynchronous connection?");
 
 var parrot = new V86Starter({        
     wasm_path: "../wasm/v86.wasm",
-    memory_size: 128 * 1024 * 1024,    
-    vga_memory_size: 16 * 1024 * 1024,
+    memory_size: 512 * 1024 * 1024,    
+    vga_memory_size: 32 * 1024 * 1024,
     bios: {
         url: "../assets/bios/seabios.bin",
         size: 128 * 1024,

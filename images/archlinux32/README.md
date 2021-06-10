@@ -10,17 +10,6 @@ https://mirror.archlinux32.org/archisos/
 
 ### Dependencies 
 
-#### Packer
-
-https://www.packer.io/downloads
-
-Download and install `Packer`.  
-Use the following command to build your own `ArchLinux32` image.
-
-```
-packer build packer.json
-```
-
 #### QEMU
 
 https://www.qemu.org/download/
@@ -30,6 +19,17 @@ Use the following command to test your `ArchLinux32` image.
 
 ```
 qemu-system-i386 -hda output-qemu/archlinux32.img
+```
+
+#### Packer
+
+https://www.packer.io/downloads
+
+Download and install `Packer`.  
+Use the following command to build your own `ArchLinux32` image.
+
+```
+packer build packer.json
 ```
 
 ## Overview
