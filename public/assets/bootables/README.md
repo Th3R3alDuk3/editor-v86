@@ -1,11 +1,3 @@
-# Images
+# Bootables
 
-## ArchLinux32
-
-Follow the steps described in the `scripts` folder.
-
-## TinyCore
-
-```
-wget https://github.com/Th3R3alDuk3/editor-v86/releases/download/image/tinycore.img
-```
+Create your own `*.raw` files. All collected information are stored in `build/bootables/*`.
