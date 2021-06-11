@@ -2,7 +2,7 @@
 
 [Demo](https://editor-v86.glitch.me/)  
   
-![editor-v86](public/img/editor.gif "editor-v86")  
+![editor-v86](app.gif "editor-v86")  
   
 ## images
 
@@ -11,7 +11,7 @@
 https://archlinux32.org/  
 https://github.com/copy/v86/blob/master/docs/archlinux.md  
   
-- `cd build/bootable/archlinux32`
+- `cd build/bootables/archlinux32`
 - `README`
 - execute packer `packer build packer.json`
 - TODO: `VirtIO 9p` filesystem  
@@ -20,18 +20,13 @@ https://github.com/copy/v86/blob/master/docs/archlinux.md
 
 http://tinycorelinux.net/  
   
-- `cd build/bootable/tinycore`
+- `cd build/bootables/tinycore`
 - `README`
 
 ### AlpineLinux
 
-- `cd build/bootable/alpinelinux`
+- `cd build/bootables/alpinelinux`
 - `README`
-
-## examples
-
-Some examples for v86 emulation:  
-https://github.com/copy/v86/tree/master/examples  
 
 ## start NodeJs
 

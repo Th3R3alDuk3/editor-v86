@@ -10,6 +10,6 @@
 output-qemu
 packer_cache
 kernel
+seabios
 node_modules
 package-lock.json
-seabios

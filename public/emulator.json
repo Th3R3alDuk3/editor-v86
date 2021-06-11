@@ -1,0 +1,150 @@
+{
+    "TinyCore": {
+        "starter": {
+            "bios": {
+                "url": "assets/bios/seabios_min.bin",
+                "size": 65536,
+                "async": false
+            },                        
+            "hda": {
+                "url": "assets/bootables/tinycore.raw",
+                "async": false
+            }
+        },
+        "listener": [
+            {
+                "receive": "box login:", 
+                "send": "tc"
+            },
+            {
+                "receive": "tc@box:~$", 
+                "send": null
+            }
+        ],
+        "applications": {
+            "tcc": {
+                "file": "out.c",
+                "send": "tcc -run ./out.c"
+            },
+            "gcc": {
+                "file": "out.c",
+                "send": "gcc ./out.c -o ./out; ./out"
+            },
+            "python": {
+                "file": "out.py",
+                "send": "python2 ./out.py"
+            }
+        }           
+    }, 
+    "TinyCore Minimal": {
+        "starter": {
+            "bios": {
+                "url": "assets/bios/seabios_min.bin",
+                "size": 65536,
+                "async": false
+            },                        
+            "hda": {
+                "url": "assets/bootables/tinycore_min.raw",
+                "async": false
+            }
+        },
+        "listener": [
+            {
+                "receive": "box login:", 
+                "send": "tc"
+            },
+            {
+                "receive": "tc@box:~$", 
+                "send": null
+            }
+        ],
+        "applications": {
+            "tcc": {
+                "file": "out.c",
+                "send": "tcc -run ./out.c"
+            },
+            "gcc": {
+                "file": "out.c",
+                "send": "echo 'NOT IMPLEMENTED'"
+            },
+            "python": {
+                "file": "out.py",
+                "send": "echo 'NOT IMPLEMENTED'"
+            }
+        }           
+    }, 
+    "AlpineLinux": {
+        "starter": {
+            "bios": {
+                "url": "assets/bios/seabios.bin",
+                "size": 131072,
+                "async": true
+            },                        
+            "hda": {
+                "url": "assets/bootables/alpinelinux.raw",
+                "async": true
+            }
+        },
+        "listener": [
+            {
+                "receive": "localhost login:", 
+                "send": "root"
+            },
+            {
+                "receive": "Password:", 
+                "send": "toor"
+            },
+            {
+                "receive": "localhost:~#", 
+                "send": null
+            }
+        ],
+        "applications": {
+            "tcc": {
+                "file": "out.c",
+                "send": "tcc -run ./out.c"
+            },
+            "gcc": {
+                "file": "out.c",
+                "send": "gcc ./out.c -o ./out; ./out"
+            },
+            "python": {
+                "file": "out.py",
+                "send": "python3 ./out.py"
+            }
+        } 
+    },
+    "ArchLinux32": {
+        "starter": {
+            "bios": {
+                "url": "assets/bios/seabios_min.bin",
+                "size": 65536,
+                "async": true
+            },                        
+            "hda": {
+                "url": "assets/bootables/archlinux32.raw",
+                "async": true
+            }
+        },
+        "listener": [
+            {
+                "receive": "[root@archlinux32 ~]#", 
+                "send": null
+            }
+        ],
+        "applications": {
+            "tcc": {
+                "file": "out.c",
+                "send": "tcc -run ./out.c"
+            },
+            "gcc": {
+                "file": "out.c",
+                "send": "gcc ./out.c -o ./out; ./out"
+            },
+            "python": {
+                "file": "out.py",
+                "send": "python ./out.py"
+            }
+        } 
+    }    
+}
