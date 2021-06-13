@@ -21,7 +21,7 @@ setup-alpine
 https://www.qemu.org/download/
 
 Download and install `QEMU`.  
-Use the following command to test your `TinyCore` image.
+Use the following command to test your `alpinelinux` image.
 
 ```
 qemu-system-i386 -hda output-qemu/alpinelinux.img
@@ -32,7 +32,7 @@ qemu-system-i386 -hda output-qemu/alpinelinux.img
 https://www.packer.io/downloads
 
 Download and install `Packer`.  
-Use the following command to build your own `AlpineLinux` image.
+Use the following command to build your own `alpinelinux` image.
 
 ```
 packer build packer.json
@@ -84,7 +84,7 @@ poweroff
 
 ## overview
 
-| script    | description            |
-|:---------:|------------------------|
-| qemu.sh   | Qemu   (manually)      |
-| packer.sh | Packer (automatically) |
+| script    | description              |
+|-----------|--------------------------|
+| qemu.sh   | Qemu - (manually)        |
+| packer.sh | Packer - (automatically) |

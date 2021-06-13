@@ -18,7 +18,7 @@ https://distro.ibiblio.org/tinycorelinux/downloads.html
 https://www.qemu.org/download/
 
 Download and install `QEMU`.  
-Use the following command to test your `TinyCore` image.
+Use the following command to test your `tinycore` image.
 
 ```
 qemu-system-i386 -hda output-qemu/tinycore.img
@@ -29,7 +29,7 @@ qemu-system-i386 -hda output-qemu/tinycore.img
 https://www.packer.io/downloads
 
 Download and install `Packer`.  
-Use the following command to build your own `TinyCore` image.
+Use the following command to build your own `tinycore` image.
 
 ```
 packer build packer.json
@@ -77,7 +77,7 @@ sudo poweroff
 
 ## overview
 
-| script    | description            |
-|:---------:|------------------------|
-| qemu.sh   | Qemu   (manually)      |
-| packer.sh | Packer (automatically) |
+| script    | description              |
+|-----------|--------------------------|
+| qemu.sh   | Qemu - (manually)        |
+| packer.sh | Packer - (automatically) |
