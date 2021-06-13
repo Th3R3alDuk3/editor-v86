@@ -1,31 +1,31 @@
 {
-  "name": "editor-v86",
-  "version": "1.0.0",
-  "description": "online C-editor that uses an client-side x86-emulator",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Th3R3alDuk3/editor-v86.git"
-  },
-  "keywords": [
-    "v86",
-    "archlinux32",
-    "monaco-editor"
-  ],
-  "author": "Paul Graff",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Th3R3alDuk3/editor-v86/issues"
-  },
-  "homepage": "https://github.com/Th3R3alDuk3/editor-v86#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "pug": "^3.0.2",
-    "monaco-editor": "^0.23.0",
-    "xterm": "^4.12.0",
-    "xterm-addon-fit": "^0.5.0"
-  }
+    "name": "editor-v86",
+    "version": "1.0.0",
+    "description": "online C-editor that uses an client-side x86-emulator",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Th3R3alDuk3/editor-v86.git"
+    },
+    "keywords": [
+        "v86",
+        "archlinux32",
+        "monaco-editor"
+    ],
+    "author": "Paul Graff",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Th3R3alDuk3/editor-v86/issues"
+    },
+    "homepage": "https://github.com/Th3R3alDuk3/editor-v86#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "pug": "^3.0.2",
+        "monaco-editor": "^0.23.0",
+        "xterm": "^4.12.0",
+        "xterm-addon-fit": "^0.5.0"
+    }
 }

@@ -11,11 +11,11 @@ console.log(bootable);
 
 /**/
 
-var _parrot = document.getElementById("parrot"); 
-var _select = document.getElementById("select");  
+var _parrot = document.getElementById("parrot");
+var _select = document.getElementById("select");
 var _button = document.getElementById("button");
 
-/**/ 
+/**/
 
 /* 
  * V86 EMULATOR
@@ -27,7 +27,7 @@ var _button = document.getElementById("button");
  */
 
 var parrot = new V86Starter(
-    Object.assign({}, {        
+    Object.assign({}, {
         wasm_path: "assets/js/wasm/v86.wasm",
         memory_size: 512 * 1024 * 1024,
         serial_container_xtermjs: _parrot,
@@ -35,10 +35,10 @@ var parrot = new V86Starter(
         boot_order: 0x132
     }, bootable.starter)
 );
-    
+
 /**/
 
-new Promise((resolve, reject) => { 
+new Promise((resolve, reject) => {
 
     setTimeout(() => {
         reject(new Error("v86 timeout"));
@@ -53,7 +53,7 @@ new Promise((resolve, reject) => {
         if (char === "\n") {
             line = "";
         } else {
-            
+
             line += char;
 
             bootable.listener.forEach(event => {
@@ -68,15 +68,15 @@ new Promise((resolve, reject) => {
                 }
             });
 
-        }            
+        }
 
     });
 
 }).then(() => {
-    _button.disabled = false;      
+    _button.disabled = false;
 });
 
-/**/     
+/**/
 
 _button.onclick = () => {
 
@@ -86,14 +86,14 @@ _button.onclick = () => {
 
     /**/
 
-    parrot.serial0_send_line("cat << 'EOF' > ./" + application.file) 
+    parrot.serial0_send_line("cat << 'EOF' > ./" + application.file)
     parrot.serial0_send_line(window.editor.getValue())
     parrot.serial0_send_line("EOF");
 
     parrot.serial0_send_line("clear");
 
     /**/
-    
+
     parrot.serial0_send_line(application.send);
-    
+
 }

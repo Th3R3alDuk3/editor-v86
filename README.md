@@ -2,33 +2,35 @@
 
 [Demo](https://editor-v86.glitch.me/)  
   
-![editor-v86](app.gif "editor-v86")  
+![editor-v86](preview.gif "editor-v86")  
   
-## images
+## build bootables
 
-### ArchLinux32
-
-https://archlinux32.org/  
-https://github.com/copy/v86/blob/master/docs/archlinux.md  
+Build your own bootable linux distibution.  
+I recommend using [Qemu](https://www.qemu.org/download/) and [Packer](https://www.packer.io/downloads).  
   
-- `cd build/bootables/archlinux32`
-- `README`
-- execute packer `packer build packer.json`
-- TODO: `VirtIO 9p` filesystem  
-
-### TinyCore
-
-http://tinycorelinux.net/  
+`cd build/bootables/...`  
   
-- `cd build/bootables/tinycore`
-- `README`
+```bash
+qemu-img create -f raw ...
+qemu-system-... -hda ... -cdrom ... --boot d 
+```
 
-### AlpineLinux
+```bash
+packer build ....json
+```
+  
+Make sure you use the disk image `raw` format!  
+  
+### recommended linux
 
-- `cd build/bootables/alpinelinux`
-- `README`
-
-## start NodeJs
+- TinyCore
+- AlpineLInux  
+- ArchLinux32  
+  
+Copy the created disk image to `public/assets/bootables` and create an entry in `public/emulator.json`. 
+  
+## start application
 
 ```
 npm install

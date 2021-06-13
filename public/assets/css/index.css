@@ -1,4 +1,4 @@
-body {                
+body {
     /* font */
     font-family: Consolas, "Courier New", monospace;
     /* color */
@@ -8,15 +8,15 @@ body {
 
 /**/
 
-.flex-container {          
+.flex-container {
     /* flex */
     display: flex;
     flex-basis: auto;
-    flex-direction: column;   
+    flex-direction: column;
     /* size */
     height: calc(100vh - 60px);
     /* distance */
-    margin: 20px;  
+    margin: 20px;
     padding: 10px;
 }
 
@@ -27,17 +27,17 @@ body {
     padding: 15px 5px;
 }
 
-.flex-item2 {       
+.flex-item2 {
     /* size */
     flex: auto;
 }
 
-.flex-item3 {       
+.flex-item3 {
     /* size */
     height: 20px;
 }
 
-.flex-item4 {    
+.flex-item4 {
     /* size */
     height: 300px;
 }
@@ -72,12 +72,12 @@ body {
     border-radius: 3px;
 }
 
-#button:disabled { 
+#button:disabled {
     color: #393939;
 }
 
-#button:hover {       
-    /* color */         
+#button:hover {
+    /* color */
     color: #228b22;
 }
 

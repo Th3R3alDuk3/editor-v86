@@ -19,26 +19,26 @@ app.set("views", "public/views");
 const fs = require("fs");
 // bootable config
 var bootables = JSON.parse(
-  fs.readFileSync("public/emulator.json")
+    fs.readFileSync("public/emulator.json")
 );
 
 /**/
 
 app.get("/", (request, response) => {
-  response.render("index", {
-    bootables: bootables
-  });
+    response.render("index", {
+        bootables: bootables
+    });
 });
 
 app.get("/bootable", (request, response) => {
-  response.render("bootable", {
-    name: request.query.name,
-    bootable: bootables[request.query.name]
-  });
+    response.render("bootable", {
+        name: request.query.name,
+        bootable: bootables[request.query.name]
+    });
 });
 
 /**/
 
 app.listen(8080, "0.0.0.0", () => {
-  console.log("http://0.0.0.0:8080")
+    console.log("http://0.0.0.0:8080")
 });

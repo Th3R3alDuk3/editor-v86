@@ -5,7 +5,7 @@
                 "url": "assets/bios/seabios_min.bin",
                 "size": 65536,
                 "async": false
-            },                        
+            },
             "hda": {
                 "url": "assets/bootables/tinycore.raw",
                 "async": false
@@ -13,11 +13,11 @@
         },
         "listener": [
             {
-                "receive": "box login:", 
+                "receive": "box login:",
                 "send": "tc"
             },
             {
-                "receive": "tc@box:~$", 
+                "receive": "tc@box:~$",
                 "send": null
             }
         ],
@@ -34,15 +34,15 @@
                 "file": "out.py",
                 "send": "python2 ./out.py"
             }
-        }           
-    }, 
+        }
+    },
     "TinyCore Minimal": {
         "starter": {
             "bios": {
                 "url": "assets/bios/seabios_min.bin",
                 "size": 65536,
                 "async": false
-            },                        
+            },
             "hda": {
                 "url": "assets/bootables/tinycore_min.raw",
                 "async": false
@@ -50,11 +50,11 @@
         },
         "listener": [
             {
-                "receive": "box login:", 
+                "receive": "box login:",
                 "send": "tc"
             },
             {
-                "receive": "tc@box:~$", 
+                "receive": "tc@box:~$",
                 "send": null
             }
         ],
@@ -71,15 +71,15 @@
                 "file": "out.py",
                 "send": "echo 'NOT IMPLEMENTED'"
             }
-        }           
-    }, 
+        }
+    },
     "AlpineLinux": {
         "starter": {
             "bios": {
                 "url": "assets/bios/seabios.bin",
                 "size": 131072,
                 "async": true
-            },                        
+            },
             "hda": {
                 "url": "assets/bootables/alpinelinux.raw",
                 "async": true
@@ -87,15 +87,15 @@
         },
         "listener": [
             {
-                "receive": "localhost login:", 
+                "receive": "localhost login:",
                 "send": "root"
             },
             {
-                "receive": "Password:", 
+                "receive": "Password:",
                 "send": "toor"
             },
             {
-                "receive": "localhost:~#", 
+                "receive": "localhost:~#",
                 "send": null
             }
         ],
@@ -112,7 +112,7 @@
                 "file": "out.py",
                 "send": "python3 ./out.py"
             }
-        } 
+        }
     },
     "ArchLinux32": {
         "starter": {
@@ -120,7 +120,7 @@
                 "url": "assets/bios/seabios_min.bin",
                 "size": 65536,
                 "async": true
-            },                        
+            },
             "hda": {
                 "url": "assets/bootables/archlinux32.raw",
                 "async": true
@@ -128,7 +128,7 @@
         },
         "listener": [
             {
-                "receive": "[root@archlinux32 ~]#", 
+                "receive": "[root@archlinux32 ~]#",
                 "send": null
             }
         ],
@@ -145,6 +145,6 @@
                 "file": "out.py",
                 "send": "python ./out.py"
             }
-        } 
-    }    
+        }
+    }
 }
