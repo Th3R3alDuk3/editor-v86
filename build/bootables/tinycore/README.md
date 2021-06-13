@@ -1,19 +1,19 @@
-# TinyCore
+# tinycore
 
 http://tinycorelinux.net
 
-## Installation
+## installation
 
 https://distro.ibiblio.org/tinycorelinux/install.html
 http://tinycorelinux.net/install_manual.html
 
-### ISOs
+### iso`s
 
 https://distro.ibiblio.org/tinycorelinux/downloads.html
 
-### Dependencies 
+### dependencies 
 
-#### QEMU
+#### use qemu
 
 https://www.qemu.org/download/
 
@@ -24,7 +24,7 @@ Use the following command to test your `TinyCore` image.
 qemu-system-i386 -hda output-qemu/tinycore.img
 ```
 
-#### Packer
+#### use packer
 
 https://www.packer.io/downloads
 
@@ -35,7 +35,7 @@ Use the following command to build your own `TinyCore` image.
 packer build packer.json
 ```
 
-### Settings
+### settings
 
 #### enable serial console
 
@@ -74,3 +74,10 @@ sudo poweroff
 #### user login
 
 `box login: tc`
+
+## overview
+
+| script    | description            |
+|:---------:|------------------------|
+| qemu.sh   | Qemu   (manually)      |
+| packer.sh | Packer (automatically) |

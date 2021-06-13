@@ -1,16 +1,16 @@
-# ArchLinux32
+# archlinux32
 
 https://archlinux32.org/  
 
-## Installation
+## installation
 
-### ISOs
+### iso`s
 
 https://mirror.archlinux32.org/archisos/
 
-### Dependencies 
+### dependencies 
 
-#### QEMU
+#### use qemu
 
 https://www.qemu.org/download/
 
@@ -21,7 +21,7 @@ Use the following command to test your `ArchLinux32` image.
 qemu-system-i386 -hda output-qemu/archlinux32.img
 ```
 
-#### Packer
+#### use packer
 
 https://www.packer.io/downloads
 
@@ -32,7 +32,7 @@ Use the following command to build your own `ArchLinux32` image.
 packer build packer.json
 ```
 
-## Overview
+## overview
 
 | script    | description            |
 |:---------:|------------------------|

@@ -1,8 +1,8 @@
-# SeaBios
+# seabios
 
 https://doc.coreboot.org/
 
-## Image
+## build binary
 
 Check the corresponding `.config` file.
 

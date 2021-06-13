@@ -1,12 +1,12 @@
-# AlpineLinux
+# alpinelinux
 
 https://alpinelinux.org
 
-## Installation
+## installation
 
 https://wiki.alpinelinux.org/wiki/Installation
 
-### ISOs
+### iso`s
 
 https://alpinelinux.org/downloads/
 
@@ -14,9 +14,9 @@ https://alpinelinux.org/downloads/
 setup-alpine
 ```
 
-### Dependencies 
+### dependencies 
 
-#### QEMU
+#### use qemu
 
 https://www.qemu.org/download/
 
@@ -27,7 +27,7 @@ Use the following command to test your `TinyCore` image.
 qemu-system-i386 -hda output-qemu/alpinelinux.img
 ```
 
-#### Packer
+#### use packer
 
 https://www.packer.io/downloads
 
@@ -38,7 +38,7 @@ Use the following command to build your own `AlpineLinux` image.
 packer build packer.json
 ```
 
-### Settings
+### settings
 
 #### enable serial console
 
@@ -81,3 +81,10 @@ apk del ./build-deps
 
 poweroff
 ```
+
+## overview
+
+| script    | description            |
+|:---------:|------------------------|
+| qemu.sh   | Qemu   (manually)      |
+| packer.sh | Packer (automatically) |

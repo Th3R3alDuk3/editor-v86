@@ -20,13 +20,15 @@ qemu-system-... -hda ... -cdrom ... --boot d
 packer build ....json
 ```
   
-Make sure you use the disk image `raw` format!  
+*!!!* Make sure you use the disk image `raw` format.  
   
 ### recommended linux
 
 - TinyCore
-- AlpineLInux  
+- AlpineLinux  
 - ArchLinux32  
+  
+*!!!* Make sure that you activate the `serial terminal`.  
   
 Copy the created disk image to `public/assets/bootables` and create an entry in `public/emulator.json`. 
   
