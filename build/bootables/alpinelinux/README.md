@@ -10,7 +10,7 @@ https://wiki.alpinelinux.org/wiki/Installation
 
 https://alpinelinux.org/downloads/
 
-```
+```bash
 setup-alpine
 ```
 
@@ -23,7 +23,7 @@ https://www.qemu.org/download/
 Download and install `QEMU`.  
 Use the following command to test your `alpinelinux` image.
 
-```
+```bash
 qemu-system-i386 -hda output-qemu/alpinelinux.img
 ```
 
@@ -34,7 +34,7 @@ https://www.packer.io/downloads
 Download and install `Packer`.  
 Use the following command to build your own `alpinelinux` image.
 
-```
+```bash
 packer build packer.json
 ```
 
@@ -45,7 +45,7 @@ packer build packer.json
 https://wiki.alpinelinux.org/wiki/Enable_Serial_Console_on_Boot
 
 `vi /etc/update-extlinux.conf`
-```
+```bash
 ...
 default_kernel_opts="console=ttyS0,9600 quiet ..."
 serial_port=0
@@ -53,19 +53,19 @@ serial_baud=9600
 timeout=1
 ...
 ```
-```
+```bash
 update-extlinux
 reboot
 ```
 
 #### install packages
 
-```
+```bash
 apk add gcc
 apk add python3
 ```
 Compile `tcc` for ure system ...
-```
+```bash
 apk add musl-dev
 apk add --virtual ./build-deps make
 

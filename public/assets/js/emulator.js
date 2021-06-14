@@ -5,7 +5,16 @@
 if (bootable == undefined)
     throw new Error("bootable not defined");
 
-// TODO: validate bootable
+/** 
+ * TODO: validate bootable
+ * 
+ * @starter
+ * containing options for class V86Starter()
+ * @listener 
+ * receive certain strings and send corresponding follow-up commands
+ * @applications
+ * send application-dependent commands
+ */
 
 console.log(bootable);
 
@@ -17,7 +26,7 @@ var _button = document.getElementById("button");
 
 /**/
 
-/* 
+/** 
  * V86 EMULATOR
  * https://github.com/Th3R3alDuk3/v86
  * 
@@ -80,7 +89,7 @@ new Promise((resolve, reject) => {
 
 _button.onclick = () => {
 
-    var application = bootable.applications[
+    let application = bootable.applications[
         _select.options[_select.selectedIndex].text
     ];
 

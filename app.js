@@ -1,14 +1,12 @@
-// web framework
 const express = require("express");
+
 const app = express();
 
 /**/
 
-// redirect static files
+// static files
 app.use(express.static("public"));
 app.use("/node_modules", express.static("node_modules"));
-
-/**/
 
 // template engine
 app.set("view engine", "pug");
@@ -17,7 +15,7 @@ app.set("views", "public/views");
 /**/
 
 const fs = require("fs");
-// bootable config
+
 var bootables = JSON.parse(
     fs.readFileSync("public/emulator.json")
 );
@@ -33,7 +31,9 @@ app.get("/", (request, response) => {
 app.get("/bootable", (request, response) => {
     response.render("bootable", {
         name: request.query.name,
-        bootable: bootables[request.query.name]
+        bootable: bootables[
+            request.query.name
+        ]
     });
 });
 

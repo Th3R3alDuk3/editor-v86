@@ -7,7 +7,7 @@ var _select = document.getElementById("select");
 
 /**/
 
-/*
+/**
  * MONACO-EDITOR 
  * https://microsoft.github.io/monaco-editor/playground.html
  */

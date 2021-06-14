@@ -11,5 +11,6 @@ output-qemu
 packer_cache
 kernel
 seabios
+buildroot
 node_modules
 package-lock.json

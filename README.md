@@ -34,7 +34,7 @@ Copy the created disk image to `public/assets/bootables` and create an entry in 
   
 ## start application
 
-```
+```bash
 npm install
 npm start
 ```

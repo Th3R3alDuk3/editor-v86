@@ -20,7 +20,7 @@ https://www.qemu.org/download/
 Download and install `QEMU`.  
 Use the following command to test your `tinycore` image.
 
-```
+```bash
 qemu-system-i386 -hda output-qemu/tinycore.img
 ```
 
@@ -31,7 +31,7 @@ https://www.packer.io/downloads
 Download and install `Packer`.  
 Use the following command to build your own `tinycore` image.
 
-```
+```bash
 packer build packer.json
 ```
 
@@ -55,7 +55,7 @@ https://mivilisnet.wordpress.com/2018/12/24/microcore-on-the-serial-console/
 
 #### install packages
 
-```
+```bash
 tce-load -wi tcc
 tce-load -wi gcc
 tce-load -wi python
@@ -63,11 +63,11 @@ tce-load -wi python
 
 ### backup filesystem 
 
-```
+```bash
 filetool.sh –b
 ```
 
-```
+```bash
 sudo poweroff
 ```
 
