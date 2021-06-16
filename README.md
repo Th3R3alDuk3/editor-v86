@@ -27,6 +27,7 @@ packer build ....json
 - TinyCore
 - AlpineLinux  
 - ArchLinux32  
+- Buildroot (script-collection to build ure own minimalistic linux-distibution)  
   
 *!!!* Make sure that you activate the `serial terminal`.  
   

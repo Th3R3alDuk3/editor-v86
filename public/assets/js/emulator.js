@@ -38,7 +38,7 @@ var _button = document.getElementById("button");
 var parrot = new V86Starter(
     Object.assign({}, {
         wasm_path: "assets/js/wasm/v86.wasm",
-        memory_size: 512 * 1024 * 1024,
+        memory_size: 1024 * 1024 * 1024,
         serial_container_xtermjs: _parrot,
         autostart: true,
         boot_order: 0x132

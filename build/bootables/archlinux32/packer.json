@@ -6,12 +6,12 @@
             "qemu_binary": "qemu-system-i386",        
 
             "vm_name": "archlinux32.raw",
-            "headless": true,
+            "headless": false,
 
             "cpus": 4,
             "memory": 4096,
 
-            "disk_size": 5000,
+            "disk_size": 2000,
             "disk_interface": "ide",
             "format": "raw",
 
@@ -19,16 +19,16 @@
             "iso_checksum": "md5:575da7d4a1ab606b1ca97cc0ab417e7f",                       
 
             "ssh_pty": true,
-            "ssh_timeout": "120s",
+            "ssh_timeout": "180s",
             "ssh_port": 22,
             "ssh_username": "root",
             "ssh_password": "toor",
 
             "boot_wait": "3s",
             "boot_command": [
-                "<enter><wait90>",
+                "<enter><wait120>",
                 "echo 'root:toor' | chpasswd",
-                "<enter><wait3>",
+                "<enter><wait1>",
                 "systemctl start sshd",
                 "<enter>"
             ],

@@ -12,6 +12,7 @@ loadkeys de-latin1-nodeadkeys
 #---
 
 # PARTITION
+echo "\n\nPARTITION"
 
 # dos partition table
 # cfdisk
@@ -26,10 +27,11 @@ mount /dev/sda1 /mnt
 #---
 
 # LINUX
+echo "\n\nLINUX"
 
 # https://wiki.archlinux.org/title/Kernel/Arch_Build_System
 # pacstrap /mnt base base-devel linux-lts linux-firmware
-pacstrap /mnt base base-devel linux
+pacstrap /mnt base linux-lts
 
 # automount partitions
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -37,6 +39,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 #---
 
 # PACKAGES
+echo "\n\nPACKAGES"
 
 # update database cache
 pacman --noconfirm --root /mnt -Syu
@@ -44,7 +47,7 @@ pacman --noconfirm --root /mnt -Syu
 # install bootloader
 pacman --noconfirm --root /mnt -S grub
 # install network tools
-pacman --noconfirm --root /mnt -S dhcpcd net-tools
+# pacman --noconfirm --root /mnt -S dhcpcd net-tools
 # install addtional tools
 pacman --noconfirm --root /mnt -S gcc tcc python
 
@@ -54,6 +57,7 @@ pacman --noconfirm --root /mnt -Sc
 #---
 
 # INITRAMFS
+echo "\n\nINITRAMFS"
 
 # support v86 keyboard
 TMP=/mnt/etc/mkinitcpio.conf
@@ -62,6 +66,7 @@ sed -i "s/MODULES=()/MODULES=(atkbd i8042)/g" $TMP
 #---
 
 # BOOTLOADER
+echo "\n\nBOOTLOADER"
 
 # hide menu
 # https://wiki.archlinux.org/title/GRUB/Tips_and_tricks
@@ -80,6 +85,7 @@ echo "archlinux32" > /mnt/etc/hostname
 #---
 
 # CHROOT BOOTSTRAP
+echo "\n\nBOOTSTRAP"
 
 cat << 'EOF' > /mnt/bootstrap.sh
 #!/bin/bash
@@ -98,10 +104,9 @@ echo "root:toor" | chpasswd
 
 # TELETYPE
 
-# tty1
+# disable tty1
 # systemctl disable getty@tty1.service
-
-# ttyS0
+# enable ttyS0
 systemctl enable serial-getty@ttyS0.service
 
 #---
@@ -127,6 +132,7 @@ arch-chroot /mnt bash bootstrap.sh
 #---
 
 # AUTOLOGIN
+echo "\n\nAUTOLOGIN"
 
 # https://wiki.archlinux.org/title/Getty#Automatic_login_to_virtual_console
 
