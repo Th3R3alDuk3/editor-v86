@@ -2,7 +2,7 @@ html
 
     head
 
-        title= name
+        title= bootable_name
 
         meta(http-equiv="content-type" content="text/html;charset=utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -10,6 +10,8 @@ html
         link(rel="stylesheet" href="node_modules/xterm/css/xterm.css")
 
         link(rel="stylesheet" href="assets/css/index.css")
+        if ["vs-dark", "hc-black"].includes(theme)
+            link(rel="stylesheet" href="assets/css/dark.css")
 
     body
 
@@ -32,13 +34,17 @@ html
             div(class="flex-item4")
                 div(id="parrot")
 
+            script(type="text/javascript").
+                //- monaco theme
+                var theme = "#{theme}";
+                //- v86 options
+                var bootable = !{bootable};
+
             script(type="text/javascript" src="node_modules/xterm/lib/xterm.js")
             script(type="text/javascript" src="node_modules/xterm-addon-fit/lib/xterm-addon-fit.js")
             script(type="text/javascript" src="node_modules/monaco-editor/min/vs/loader.js")
 
             script(type="text/javascript" src="assets/js/libv86.js")
-
-            script(type="text/javascript") var bootable = !{JSON.stringify(bootable)};
 
             script(type="text/javascript" src="assets/js/editor.js")
             script(type="text/javascript" src="assets/js/emulator.js")

@@ -2,6 +2,15 @@
 
 /**/
 
+
+if (theme == undefined) 
+    throw new Error("theme not defined");
+
+if (!["vs", "vs-dark", "hc-black"].includes(theme))
+    theme = "vs";
+
+/**/
+
 var _editor = document.getElementById("editor");
 var _select = document.getElementById("select");
 
@@ -12,14 +21,14 @@ var _select = document.getElementById("select");
  * https://microsoft.github.io/monaco-editor/playground.html
  */
 
-require.config({ paths: { vs: "node_modules/monaco-editor/min/vs" } });
+require.config({paths: {vs: "node_modules/monaco-editor/min/vs"}});
 
 require(["vs/editor/editor.main"], () => {
 
     var editor = window.editor = monaco.editor.create(
         _editor, {
             language: "c",
-            theme: "vs-dark",
+            theme: theme,
             value: `#include <stdio.h>
 
 void main() { 

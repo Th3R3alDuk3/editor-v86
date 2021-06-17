@@ -24,16 +24,22 @@ var bootables = JSON.parse(
 
 app.get("/", (request, response) => {
     response.render("index", {
-        bootables: bootables
+        theme: request.query.theme,
+        bootables: JSON.parse(
+            fs.readFileSync("public/emulator.json")
+        )
     });
 });
 
-app.get("/bootable", (request, response) => {
-    response.render("bootable", {
-        name: request.query.name,
-        bootable: bootables[
-            request.query.name
-        ]
+app.get("/show", (request, response) => {
+    response.render("show", {
+        theme: request.query.theme,
+        bootable_name: request.query.bootable_name,
+        bootable: JSON.stringify(
+            bootables[
+                request.query.bootable_name
+            ]
+        )
     });
 });
 

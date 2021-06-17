@@ -2,8 +2,8 @@ body {
     /* font */
     font-family: Consolas, "Courier New", monospace;
     /* color */
-    background-color: #1e1e1e;
-    color: #fff;
+    background-color: #ffffff;
+    color: #1e1e1e;
 }
 
 /**/
@@ -46,8 +46,8 @@ body {
 
 #select {
     /* color */
-    background-color: #1e1e1e;
-    color: #32cd32;
+    background-color: #ffffff;
+    color: #1e1e1e;
     /* position */
     float: right;
     /* distance */
@@ -60,8 +60,8 @@ body {
 
 #button {
     /* color */
-    background-color: #1e1e1e;
-    color: #32cd32;
+    background-color: #ffffff;
+    color: #1e1e1e;
     /* position */
     float: right;
     /* distance */
@@ -73,17 +73,18 @@ body {
 }
 
 #button:disabled {
-    color: #393939;
+    /* color */
+    color: #cccccc;
 }
 
 #button:hover {
     /* color */
-    color: #228b22;
+    color: #cccccc;
 }
 
 #button:active {
     /* color */
-    color: #006400;
+    color: #1e1e1e;
 }
 
 /**/
@@ -91,8 +92,8 @@ body {
 #editor {
     /* size */
     height: 100%;
-    /* border */
-    border: 1px solid #393939;
+    /* border 
+    border: 1px solid #393939; */
 }
 
 #parrot {
