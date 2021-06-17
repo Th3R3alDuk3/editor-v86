@@ -3,11 +3,11 @@
 /**/
 
 
-if (theme == undefined) 
-    throw new Error("theme not defined");
+if (monaco_theme == undefined) 
+    throw new Error("monaco_theme not defined");
 
-if (!["vs", "vs-dark", "hc-black"].includes(theme))
-    theme = "vs";
+if (!["vs", "vs-dark", "hc-black"].includes(monaco_theme))
+    monaco_theme = "vs";
 
 /**/
 
@@ -28,7 +28,7 @@ require(["vs/editor/editor.main"], () => {
     var editor = window.editor = monaco.editor.create(
         _editor, {
             language: "c",
-            theme: theme,
+            theme: monaco_theme,
             value: `#include <stdio.h>
 
 void main() { 

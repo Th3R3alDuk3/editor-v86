@@ -24,7 +24,7 @@ var bootables = JSON.parse(
 
 app.get("/", (request, response) => {
     response.render("index", {
-        theme: request.query.theme,
+        monaco_theme: request.query.monaco_theme,
         bootables: JSON.parse(
             fs.readFileSync("public/emulator.json")
         )
@@ -33,7 +33,7 @@ app.get("/", (request, response) => {
 
 app.get("/show", (request, response) => {
     response.render("show", {
-        theme: request.query.theme,
+        monaco_theme: request.query.monaco_theme,
         bootable_name: request.query.bootable_name,
         bootable: JSON.stringify(
             bootables[

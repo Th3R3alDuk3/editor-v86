@@ -10,7 +10,7 @@ html
         link(rel="stylesheet" href="node_modules/xterm/css/xterm.css")
 
         link(rel="stylesheet" href="assets/css/index.css")
-        if ["vs-dark", "hc-black"].includes(theme)
+        if ["vs-dark", "hc-black"].includes(monaco_theme)
             link(rel="stylesheet" href="assets/css/dark.css")
 
     body
@@ -36,7 +36,7 @@ html
 
             script(type="text/javascript").
                 //- monaco theme
-                var theme = "#{theme}";
+                var monaco_theme = "#{monaco_theme}";
                 //- v86 options
                 var bootable = !{bootable};
 
