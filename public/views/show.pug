@@ -32,19 +32,18 @@ html
             div(class="flex-item3")
 
             div(class="flex-item4")
-                div(id="parrot")
-
-            script(type="text/javascript").
-                //- monaco theme
-                var monaco_theme = "#{monaco_theme}";
-                //- v86 options
-                var bootable = !{bootable};
+                div(id="parrot")            
 
             script(type="text/javascript" src="node_modules/xterm/lib/xterm.js")
             script(type="text/javascript" src="node_modules/xterm-addon-fit/lib/xterm-addon-fit.js")
             script(type="text/javascript" src="node_modules/monaco-editor/min/vs/loader.js")
 
             script(type="text/javascript" src="assets/js/libv86.js")
+
+            //- necessary defines
+            script(type="text/javascript").
+                var monaco_theme = "#{monaco_theme}";
+                var bootable = !{bootable};
 
             script(type="text/javascript" src="assets/js/editor.js")
             script(type="text/javascript" src="assets/js/emulator.js")

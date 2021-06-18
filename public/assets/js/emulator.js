@@ -9,11 +9,11 @@ if (bootable == undefined)
  * TODO: validate bootable
  * 
  * @starter
- * containing options for class V86Starter()
+ *  containing options for class V86Starter()
  * @listener 
- * receive certain strings and send corresponding follow-up commands
+ *  receive certain strings and send corresponding follow-up commands
  * @applications
- * send application-dependent commands
+ *  send application-dependent commands
  */
 
 console.log(bootable);

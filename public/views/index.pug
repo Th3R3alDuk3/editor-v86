@@ -20,9 +20,9 @@ html
             each _, bootable_name in bootables
                 tr: td: a(href="show?monaco_theme=" + monaco_theme + "&bootable_name=" + bootable_name)= bootable_name
 
+        //- additional theme selection
         script(type="text/javascript").
             let url = new URL(window.location.href);
-            //- monaco theme
             if (!url.searchParams.get("monaco_theme"))
                 if(confirm("Do you want to use the monaco dark theme?"))
                     window.open("/?monaco_theme=vs-dark", "_self");
