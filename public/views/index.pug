@@ -25,4 +25,4 @@ html
             let url = new URL(window.location.href);
             if (!url.searchParams.get("monaco_theme"))
                 if(confirm("Do you want to use the monaco dark theme?"))
-                    window.open("/?monaco_theme=vs-dark", "_self");
+                    window.location.replace("/?monaco_theme=vs-dark", "_self");
