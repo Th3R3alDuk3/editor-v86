@@ -1,0 +1,102 @@
+body {
+    /* font */
+    font-family: Consolas, "Courier New", monospace;
+    /* color */
+    background-color: #ffffff;
+    color: #1e1e1e;
+}
+
+/**/
+
+.flex-container {
+    /* flex */
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    /* size */
+    height: calc(100vh - 60px);
+    /* distance */
+    margin: 20px;
+    padding: 10px;
+}
+
+.flex-item1 {
+    /* size */
+    line-height: 20px;
+    /* distance */
+    padding: 15px 5px;
+}
+
+.flex-item2 {
+    /* size */
+    flex: auto;
+}
+
+.flex-item3 {
+    /* size */
+    height: 20px;
+}
+
+.flex-item4 {
+    /* size */
+    height: 300px;
+}
+
+/**/
+
+#select {
+    /* color */
+    background-color: #ffffff;
+    color: #1e1e1e;
+    /* position */
+    float: right;
+    /* distance */
+    padding: 5px 10px;
+    margin-left: 20px;
+    /* border */
+    border: 1px solid #393939;
+    border-radius: 3px;
+}
+
+#button {
+    /* color */
+    background-color: #ffffff;
+    color: #1e1e1e;
+    /* position */
+    float: right;
+    /* distance */
+    padding: 5px 10px;
+    margin-left: 20px;
+    /* border */
+    border: 1px solid #393939;
+    border-radius: 3px;
+}
+
+#button:disabled {
+    /* color */
+    color: #cccccc;
+}
+
+#button:hover {
+    /* color */
+    color: #cccccc;
+}
+
+#button:active {
+    /* color */
+    color: #1e1e1e;
+}
+
+/**/
+
+#editor {
+    /* size */
+    height: 100%;
+    /* border 
+    border: 1px solid #393939; */
+}
+
+#parrot {
+    /* size */
+    height: 100%;
+}

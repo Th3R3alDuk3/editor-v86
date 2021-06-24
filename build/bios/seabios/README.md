@@ -2,7 +2,7 @@
 
 https://doc.coreboot.org/
 
-## build binary
+## build
 
 Check the corresponding `.config` file.
 

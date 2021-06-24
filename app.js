@@ -10,7 +10,7 @@ app.use("/node_modules", express.static("node_modules"));
 
 // template engine
 app.set("view engine", "pug");
-app.set("views", "public/views");
+app.set("views", "views");
 
 /**/
 

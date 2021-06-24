@@ -2,12 +2,12 @@
     "TinyCore": {
         "starter": {
             "bios": {
-                "url": "assets/bios/seabios_min.bin",
+                "url": "bios/seabios_min.bin",
                 "size": 65536,
                 "async": false
             },
             "hda": {
-                "url": "assets/bootables/tinycore.raw",
+                "url": "bootables/tinycore.raw",
                 "async": false
             }
         },
@@ -39,12 +39,12 @@
     "TinyCore Minimal": {
         "starter": {
             "bios": {
-                "url": "assets/bios/seabios_min.bin",
+                "url": "bios/seabios_min.bin",
                 "size": 65536,
                 "async": false
             },
             "hda": {
-                "url": "assets/bootables/tinycore_min.raw",
+                "url": "bootables/tinycore_min.raw",
                 "async": false
             }
         },
@@ -76,12 +76,12 @@
     "AlpineLinux": {
         "starter": {
             "bios": {
-                "url": "assets/bios/seabios.bin",
+                "url": "bios/seabios.bin",
                 "size": 131072,
                 "async": true
             },
             "hda": {
-                "url": "assets/bootables/alpinelinux.raw",
+                "url": "bootables/alpinelinux.raw",
                 "async": true
             }
         },
@@ -117,12 +117,12 @@
     "ArchLinux32": {
         "starter": {
             "bios": {
-                "url": "assets/bios/seabios_min.bin",
+                "url": "bios/seabios_min.bin",
                 "size": 65536,
                 "async": true
             },
             "hda": {
-                "url": "assets/bootables/archlinux32.raw",
+                "url": "bootables/archlinux32.raw",
                 "async": true
             }
         },
