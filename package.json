@@ -12,6 +12,11 @@
     },
     "keywords": [
         "v86",
+        "seabios",
+        "tinycore",
+        "alpinelinux",
+        "archlinux32",
+        "xterm.js",
         "monaco-editor"
     ],
     "author": "Paul Graff",

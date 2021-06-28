@@ -23,16 +23,16 @@
         ],
         "applications": {
             "tcc": {
-                "file": "out.c",
-                "send": "tcc -run ./out.c"
+                "file": "file.c",
+                "send": "tcc -run ./file.c"
             },
             "gcc": {
-                "file": "out.c",
-                "send": "gcc ./out.c -o ./out; ./out"
+                "file": "file.c",
+                "send": "gcc -o ./binary -x c ./file.c; ./binary"
             },
             "python": {
-                "file": "out.py",
-                "send": "python2 ./out.py"
+                "file": "file.py",
+                "send": "python2 ./file.py"
             }
         }
     },
@@ -60,15 +60,15 @@
         ],
         "applications": {
             "tcc": {
-                "file": "out.c",
-                "send": "tcc -run ./out.c"
+                "file": "file.c",
+                "send": "tcc -run ./file.c"
             },
             "gcc": {
-                "file": "out.c",
+                "file": "file.c",
                 "send": "echo 'NOT IMPLEMENTED'"
             },
             "python": {
-                "file": "out.py",
+                "file": "file.py",
                 "send": "echo 'NOT IMPLEMENTED'"
             }
         }
@@ -101,16 +101,16 @@
         ],
         "applications": {
             "tcc": {
-                "file": "out.c",
-                "send": "tcc -run ./out.c"
+                "file": "file.c",
+                "send": "tcc -run ./file.c"
             },
             "gcc": {
-                "file": "out.c",
-                "send": "gcc ./out.c -o ./out; ./out"
+                "file": "file.c",
+                "send": "gcc -o ./binary -x c ./file.c; ./binary"
             },
             "python": {
-                "file": "out.py",
-                "send": "python3 ./out.py"
+                "file": "file.py",
+                "send": "python3 ./file.py"
             }
         }
     },
@@ -134,16 +134,16 @@
         ],
         "applications": {
             "tcc": {
-                "file": "out.c",
-                "send": "tcc -run ./out.c"
+                "file": "file.c",
+                "send": "tcc -run ./file.c"
             },
             "gcc": {
-                "file": "out.c",
-                "send": "gcc ./out.c -o ./out; ./out"
+                "file": "file.c",
+                "send": "gcc -o ./binary -x c ./file.c; ./binary"
             },
             "python": {
-                "file": "out.py",
-                "send": "python ./out.py"
+                "file": "file.py",
+                "send": "python ./file.py"
             }
         }
     }
