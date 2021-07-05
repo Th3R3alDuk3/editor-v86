@@ -1,5 +1,7 @@
 # editor-v86
 
+This is an online **editor** that uses a **client-side emulator (v86)**.  
+  
 [Demo](https://editor-v86.glitch.me)  
   
 ![editor-v86](preview.gif "editor-v86")  
