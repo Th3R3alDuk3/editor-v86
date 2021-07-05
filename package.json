@@ -1,7 +1,7 @@
 {
     "name": "editor-v86",
     "version": "1.0.0",
-    "description": "online editor that uses an client-side x86-emulator",
+    "description": "online editor that uses an client-side x86-emulator (v86)",
     "main": "app.js",
     "scripts": {
         "start": "node app.js"
