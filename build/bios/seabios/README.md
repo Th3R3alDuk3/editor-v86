@@ -1,6 +1,6 @@
 # seabios
 
-https://doc.coreboot.org/  
+https://doc.coreboot.org/
 
 ## configuration
 
