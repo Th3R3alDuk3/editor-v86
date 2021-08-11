@@ -14,6 +14,26 @@ I am using some well-known frameworks in this project.
 Because of its usability and good documentation, the [v86 emulator](https://github.com/copy/v86) is suitable for our purposes.  
 You can adapt any compiler or programming language as you wish.  
   
+## installation
+
+Install [node.js](https://nodejs.org) and download all [dependencies](package.json).  
+
+```bash
+npm install
+npm start
+```
+
+### use the electron client
+
+Start the web service and follow the instructions below.
+  
+```bash
+cd client
+
+npm install
+npm start
+```
+  
 ## bootables
 
 Build your own bootable linux distibution.  
@@ -43,23 +63,3 @@ packer build ....json
 *!!!* Make sure you have activated the `serial terminal`.  
   
 Copy the image to `public/bootables` and create an entry in `public/emulator.json`. 
-  
-## installation
-
-Install [node.js](https://nodejs.org) and download all [dependencies](package.json).  
-
-```bash
-npm install
-npm start
-```
-
-### use the electron client
-
-Start the web service and follow the instructions below.
-  
-```bash
-cd client
-
-npm install
-npm start
-```
