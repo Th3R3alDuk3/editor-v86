@@ -6,7 +6,7 @@ This is an online **editor** that uses a **client-side x86-emulator (v86)**.
   
 ![editor-v86](preview.gif "editor-v86")  
   
-I am using some well-known frameworks, such as [v86](https://github.com/copy/v86) or [monaco-editor](https://microsoft.github.io/monaco-editor/), in this project.  
+I am using some well-known frameworks such as [v86](https://github.com/copy/v86) or [monaco-editor](https://microsoft.github.io/monaco-editor/) in this project.  
 You can adapt any compiler or programming language as you wish.  
   
 ## build bootables
