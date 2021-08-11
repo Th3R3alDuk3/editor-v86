@@ -40,15 +40,17 @@ Copy the created disk image to `public/bootables` and create an entry in `public
   
 ## installation
 
-Install [node.js](https://nodejs.org) and download all dependencies.  
+Install [node.js](https://nodejs.org) and download all [dependencies](package.json).  
 
 ```bash
 npm install
 npm start
 ```
 
-### electron client
+#### use the electron client
 
+Start the web service and follow the instructions below.
+  
 ```bash
 cd client
 
