@@ -25,18 +25,18 @@ qemu-system-... -hda ... -cdrom ... --boot d
 packer build ....json
 ```
   
-*!!!* Make sure you use the disk image format called `raw`.  
+*!!!* Make sure you use the `raw` disk image format.  
   
 ### recommended distributions
 
 - [TinyCore](http://tinycorelinux.net/)  
 - [AlpineLinux](https://www.alpinelinux.org/)  
 - [ArchLinux32](https://archlinux32.org/)  
-- [Buildroot](https://buildroot.org/) _(script-collection to build ure own minimalistic linux distibution)_  
+- [Buildroot](https://buildroot.org/) _(script-collection to build ure own minimalistic distibution)_  
   
-*!!!* Make sure that you activate the `serial terminal`.  
+*!!!* Make sure you have activated the `serial terminal`.  
   
-Copy the created disk image to `public/bootables` and create an entry in `public/emulator.json`. 
+Copy the image to `public/bootables` and create an entry in `public/emulator.json`. 
   
 ## installation
 
