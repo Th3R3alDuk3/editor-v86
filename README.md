@@ -25,7 +25,7 @@ qemu-system-... -hda ... -cdrom ... --boot d
 packer build ....json
 ```
   
-*!!!* Make sure you use the disk image `raw` format.  
+*!!!* Make sure you use the disk image format `raw`.  
   
 ### recommended distributions
 
@@ -47,7 +47,7 @@ npm install
 npm start
 ```
 
-#### use the electron client
+### use the electron client
 
 Start the web service and follow the instructions below.
   
