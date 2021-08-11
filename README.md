@@ -33,7 +33,8 @@ packer build ....json
 - [tinycore](http://tinycorelinux.net/)  
 - [alpinelinux](https://www.alpinelinux.org/)  
 - [archlinux32](https://archlinux32.org/)  
-- [buildroot](https://buildroot.org/) _(script-collection to build ure own minimalistic distibution)_  
+- [buildroot](https://buildroot.org/) 
+   - _(script-collection to build ure own minimalistic distibution)_  
   
 *!!!* Make sure you have activated the `serial terminal`.  
   
