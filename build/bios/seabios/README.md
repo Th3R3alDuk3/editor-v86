@@ -1,9 +1,7 @@
 # seabios
 
-https://doc.coreboot.org/
-
-## build
-
+https://doc.coreboot.org/  
+  
 Check the corresponding `.config` file.
 
 ```
