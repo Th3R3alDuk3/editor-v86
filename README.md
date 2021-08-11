@@ -2,7 +2,7 @@
 
 This is an online **editor** that uses a **client-side x86-emulator (v86)**.  
   
-[Demo](https://editor-v86.glitch.me)  
+[DEMO](https://editor-v86.glitch.me)  
   
 ![editor-v86](preview.gif "editor-v86")  
   
@@ -13,7 +13,7 @@ You can adapt any compiler or programming language as you wish.
 ## bootables
 
 Build your own bootable linux distibution.  
-I recommend using [Qemu](https://www.qemu.org/download) and [Packer](https://www.packer.io/downloads).  
+I recommend using [qemu](https://www.qemu.org/download) and [packer](https://www.packer.io/downloads).  
   
 `cd build/bootables/...`  
   
@@ -30,10 +30,10 @@ packer build ....json
   
 ### recommended distributions
 
-- [TinyCore](http://tinycorelinux.net/)  
-- [AlpineLinux](https://www.alpinelinux.org/)  
-- [ArchLinux32](https://archlinux32.org/)  
-- [Buildroot](https://buildroot.org/) _(script-collection to build ure own minimalistic distibution)_  
+- [tinycore](http://tinycorelinux.net/)  
+- [alpinelinux](https://www.alpinelinux.org/)  
+- [archlinux32](https://archlinux32.org/)  
+- [buildroot](https://buildroot.org/) _(script-collection to build ure own minimalistic distibution)_  
   
 *!!!* Make sure you have activated the `serial terminal`.  
   
