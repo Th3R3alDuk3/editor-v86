@@ -9,7 +9,7 @@ This is an online **editor** that uses a **client-side x86-emulator (v86)**.
 I am using some well-known frameworks such as [v86](https://github.com/copy/v86) or [monaco-editor](https://microsoft.github.io/monaco-editor/) in this project.  
 You can adapt any compiler or programming language as you wish.  
   
-## build bootables
+## bootables
 
 Build your own bootable linux distibution.  
 I recommend using [Qemu](https://www.qemu.org/download) and [Packer](https://www.packer.io/downloads).  
@@ -25,14 +25,14 @@ qemu-system-... -hda ... -cdrom ... --boot d
 packer build ....json
 ```
   
-*!!!* Make sure you use the disk image format `raw`.  
+*!!!* Make sure you use the disk image format called `raw`.  
   
 ### recommended distributions
 
-- TinyCore
-- AlpineLinux  
-- ArchLinux32  
-- Buildroot _(script-collection to build ure own minimalistic linux-distibution)_  
+- [TinyCore](http://tinycorelinux.net/)  
+- [AlpineLinux](https://www.alpinelinux.org/)  
+- [ArchLinux32](https://archlinux32.org/)  
+- [Buildroot](https://buildroot.org/) _(script-collection to build ure own minimalistic linux distibution)_  
   
 *!!!* Make sure that you activate the `serial terminal`.  
   
