@@ -34,7 +34,7 @@ npm install
 npm start
 ```
   
-## bootables
+## bootable configuration
 
 Build your own bootable linux distibution.  
 I recommend using [qemu](https://www.qemu.org/download) and [packer](https://www.packer.io/downloads).  
