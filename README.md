@@ -38,7 +38,7 @@ packer build ....json
   
 Copy the created disk image to `public/bootables` and create an entry in `public/emulator.json`. 
   
-## start application
+## installation
 
 Install [node.js](https://nodejs.org) and download all dependencies.  
 
