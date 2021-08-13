@@ -1,7 +1,7 @@
 {
-    "name": "editor-v86",
+    "name": "electron-client-4-editor-v86",
     "version": "1.0.0",
-    "description": "online C-editor that uses an client-side x86-emulator",
+    "description": "electron client for editor-v86",
     "main": "app.js",
     "scripts": {
         "start": "electron ."
@@ -10,10 +10,7 @@
         "type": "git",
         "url": "git+https://github.com/Th3R3alDuk3/editor-v86.git"
     },
-    "keywords": [
-        "v86",
-        "monaco-editor"
-    ],
+    "keywords": [],
     "author": "Paul Graff",
     "license": "MIT",
     "bugs": {

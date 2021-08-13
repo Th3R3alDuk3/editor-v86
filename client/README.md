@@ -1,7 +1,7 @@
-# client
+### electron client (optional)
 
-The `node.js` server must already be started.  
-
+Start the web service and follow the instructions below.
+  
 ```
 npm install
 npm start

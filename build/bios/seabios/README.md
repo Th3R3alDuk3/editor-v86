@@ -1,10 +1,6 @@
-# seabios
+### seabios
 
-https://doc.coreboot.org/
-
-## configuration
-
-Check the corresponding `.config` file.
+Use the appropriate configuration `.config` for [coreboot](https://doc.coreboot.org/).
 
 ```
 git clone https://github.com/coreboot/seabios
