@@ -1,7 +1,6 @@
 # client
 
-The `node.js` server must be startet.  
-Install `electron` and start application.  
+The `node.js` server must already be started.  
 
 ```
 npm install
