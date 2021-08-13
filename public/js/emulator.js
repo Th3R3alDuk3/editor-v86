@@ -21,8 +21,6 @@ var _parrot = document.getElementById("parrot");
 var _select = document.getElementById("select");
 var _button = document.getElementById("button");
 
-/**/
-
 /** 
  * V86 EMULATOR
  * https://github.com/Th3R3alDuk3/v86
@@ -46,6 +44,7 @@ var parrot = new V86Starter(
 
 new Promise((resolve, reject) => {
 
+    // timeout after 5 min
     setTimeout(() => {
         reject(new Error("v86 timeout"));
     }, 300 * 1000);
@@ -54,6 +53,7 @@ new Promise((resolve, reject) => {
 
     var line = "";
 
+    // use named function instead of arrow function 
     parrot.add_listener("serial0-output-char", function listener(char) {
 
         if (char === "\n") {
@@ -63,13 +63,17 @@ new Promise((resolve, reject) => {
             line += char;
 
             bootable.listener.forEach(event => {
+                // check for known event message
                 if (line.endsWith(event.receive)) {
                     if (event.send != null) {
                         parrot.serial0_send_line(event.send);
                     } else {
+
                         parrot.remove_listener("serial0-output-char", listener);
                         parrot.serial0_send_line("clear");
+
                         resolve();
+
                     }
                 }
             });

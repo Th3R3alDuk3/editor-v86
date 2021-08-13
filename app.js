@@ -4,13 +4,13 @@ const app = express();
 
 /**/
 
+// support template engine
+app.set("view engine", "pug");
+app.set("views", "views");
+
 // static files
 app.use(express.static("public"));
 app.use("/node_modules", express.static("node_modules"));
-
-// template engine
-app.set("view engine", "pug");
-app.set("views", "views");
 
 /**/
 
@@ -25,9 +25,7 @@ var bootables = JSON.parse(
 app.get("/", (request, response) => {
     response.render("index", {
         monaco_theme: request.query.monaco_theme,
-        bootables: JSON.parse(
-            fs.readFileSync("public/emulator.json")
-        )
+        bootables: bootables
     });
 });
 
@@ -36,14 +34,10 @@ app.get("/show", (request, response) => {
         monaco_theme: request.query.monaco_theme,
         bootable_name: request.query.bootable_name,
         bootable: JSON.stringify(
-            bootables[
-                request.query.bootable_name
-            ]
+            bootables[request.query.bootable_name]
         )
     });
 });
-
-/**/
 
 app.listen(8080, "0.0.0.0", () => {
     console.log("http://0.0.0.0:8080");
